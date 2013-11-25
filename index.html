@@ -7,6 +7,11 @@
     <link rel="stylesheet" href="lib/jquery.mobile-1.3.2.min.css" />
     <link rel="stylesheet" href="style.css" />
     <script src="lib/jquery-2.0.3.min.js"></script>
+        <script>
+        $(document).bind("mobileinit", function(){
+            $.mobile.defaultPageTransition = 'none';
+        });
+    </script>
     <script src="lib/jquery.mobile-1.3.2.min.js"></script>
 
 </head>
@@ -23,7 +28,7 @@
 
             <div data-role="collapsible" data-iconpos="right" data-collapsed-icon="arrow-r" data-theme="a" data-content-theme="a">
                 <h3>Section One</h3>
-                <a href="sections/section_1.html" data-transition="none">Introduction</a>
+                <a href="sections/section_1.html">Introduction</a>
                 <br>
                 <br>
                 <a href="sections/section_1.1.html">Defining Shyness and Social Anxiety</a>
