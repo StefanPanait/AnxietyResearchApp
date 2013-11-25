@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+    <widget xmlns = "http://www.w3.org/ns/widgets"
+        xmlns:gap = "http://phonegap.com/ns/1.0"
+        id        = "com.wlu.anxietyresearch"
+        version   = "1.0.1">
+
+    <!-- versionCode is optional and Android only -->
+
+    <name>Anxiety Research Application</name>
+
+    <description>
+        A mobile app for a pilot research study on anxiety at WLU. 
+    </description>
+
+    <author email="stefanapanait@gmail.com">
+        Stefan Panait
+    </author>
+
+</widget>
