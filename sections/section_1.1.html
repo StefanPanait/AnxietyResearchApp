@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta name="viewport" content="width=device-width, user-scalable=no" />
+    <link rel="stylesheet" href="http://code.jquery.com/mobile/1.2.0/jquery.mobile-1.2.0.min.css" />
+    <link rel="stylesheet" href="style.css" />
+    <script src="http://code.jquery.com/jquery-1.8.2.min.js"></script>
+    <script src="http://code.jquery.com/mobile/1.2.0/jquery.mobile-1.2.0.min.js"></script>
+</head>
+
+<body>
+
+    <div data-role="page" data-position="fixed">
+        <div data-role="header">
+            <h1>Defining Shyness and Social Anxiety</h>
+        </div>
+        <!-- /header -->
+
+        <div data-role="content">
+            <p>
+                <b><i>Shyness</i></b> refers to the tendency to feel nervous or timid when interacting with other people, especially strangers. 
+                <br>
+                <br>
+                <b><i>Social anxiety</b></i> is a broader term that includes shyness, as well as the experience of fear when being observed by others (for example, while eating) and performing in front of others (for example, giving a speech). Interacting with others, being observed by others, and performing in front of others are the main types of feared social situations.
+                <br>
+                <br>
+                Shy and socially anxious people are nervous in these situations because of what might happen, because of feared outcomes; specifically, they fear that they will say or do something embarrassing (such as spill a drink or forget their lines), show symptoms of anxiety (such as blushing, trembling, and sweating), or otherwise be scrutinized and judged critically by others (for example, as clumsy, incompetent, weak, and so on). The specific details of feared outcomes vary considerably from person to person; however, most social fears come down to a concern about coming up short in the eyes of others.
+            </p>
+
+            <h2>Exercise 1: Top Feared Social Situations</h2>
+            <p>
+                Being as specific as possible, describe three social situations that are most fearful or problematic in your life.This could include:
+                <br> 
+                <h4><li>Social Situations</li></h4> (e.g. any kind of small talk, especially with strangers; asking for help; introducing myself to a people)
+                <br>
+                <h4><li>Being Observed by Others</li></h4> 
+                (e.g. walking into a crowded room; waiting in line; eating, drinking, or writing in front of others)
+                <br>
+                <h4><li>Performing in Front of Others</li></h4> (e.g. speaking up in a class discussion, or giving a presentation; being interviewed for a job)
+            </p>
+                <h3>Top 3 Feared Social Situations</h3>
+                <form name="exercise_1">
+                    <div data-role='fieldcontain' >
+                        <input type='text' name='fear_1' placeholder='1.'/>
+                        <input type='text' name='fear_2' placeholder='2.'/>
+                        <input type='text' name='fear_3' placeholder='3.'/>
+                    </div>
+                </form>
+                <script>
+                    if (localStorage['exercise_1']) {
+                        var exercise_1 = JSON.parse(localStorage['exercise_1']);
+                        document.forms["exercise_1"]["fear_1"].value = exercise_1['fear_1'];
+                        document.forms["exercise_1"]["fear_2"].value = exercise_1['fear_2'];
+                        document.forms["exercise_1"]["fear_3"].value = exercise_1['fear_3'];
+                    }
+                    function submitExcerise_1() {
+                        var exercise_1 = {};
+                        for (var i = 1; i <= 3; i++) {
+                            if (document.forms["exercise_1"]["fear_"+i].value.length>0) {
+                                exercise_1["fear_"+i] = document.forms["exercise_1"]["fear_"+i].value;
+                            } else {
+                                exercise_1["fear_"+i] = "";
+                            }
+                        }
+                        localStorage.setItem('exercise_1', JSON.stringify(exercise_1));                       
+                    }
+                </script>
+
+        </div>
+        <!-- /content -->
+                    
+        <div data-role="footer" data-position="fixed">
+            <div data-role="navbar" data-iconpos="right">
+                 <ul>
+                    <li>
+                        <a href="../index.html" data-rel="dialog" data-transition="pop">Back</a>
+                    </li>
+                    <li>
+                        <a href="../index.html">Home</a>
+                    </li>
+                    <li>
+                        <a href="section_1.2.html" onclick="submitExcerise_1();">Continue</a>
+                    </li>
+                </ul>
+            </div>
+            <!-- /navbar -->
+        </div>
+        <!-- /footer -->
+
+    </div>
+    <!-- /page -->
+
+</body>
+</html>

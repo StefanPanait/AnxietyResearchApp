@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <link rel="stylesheet" href="http://code.jquery.com/mobile/1.2.0/jquery.mobile-1.2.0.min.css" />
+    <link rel="stylesheet" href="style.css" />
+    <script src="http://code.jquery.com/jquery-1.8.2.min.js"></script>
+    <script src="http://code.jquery.com/mobile/1.2.0/jquery.mobile-1.2.0.min.js"></script>
+</head>
+
+<body>
+
+    <div data-role="page" data-position="fixed">
+        <div data-role="header">
+            <h1>Defusing from Your Anxious Thoughts</h>
+        </div>
+        <!-- /header -->
+
+        <div data-role="content">
+            <p>
+                Emily treated the thought <i>they think I'm weird</i> as if she literally were weird, so she decided not to approach anyone at the party. For Jack, the mere thought of speaking up in class was accompanied by palpitations, as if he were actually speaking, so he chose to say nothing. These examples demonstrate that when you take your thoughts literally (as facts) or <b><i>fuse</i></b> with them, they appear to have authority, as if they were spoken by a big monster, one so powerful that you have no choice but to act on his orders if you want to keep safe.
+            </p>
+            <h4>Fusion: Your anxious thoughts send you down the path of avoidance. </h4>
+            <p>
+                On the other hand, when you are <b><i>defused</i></b> from your thoughts, you see them for what they are: a collection of words and images in your mind. This reduces their power, giving you the freedom to choose how to respond to them.
+
+                In this app, you will take a close look at your anxious thinking, and learn how to apply a wide range of defusion strategies to your fused mind. As you gain experience in unhooking from your anxious thoughts, you will develop the ability to allow your direct experience of social situations to guide your actions, instead of letting your bossy thoughts do so.
+            </p>
+            <h3> 
+                <b><i>Defusion</i></b>: You can choose the path toward your values and take your anxious 
+                thoughts along for the ride.
+            </h3>
+            <h2>Exercise 2: Your Anxious Thoughts</h2>
+            <p>
+                List some of the thoughts that typically show up in each of your top three feared social situations (from <b>Exercise 1</b>).
+            </p>
+
+            <form name="exercise_2">
+                <table border="0">
+                    <tr>
+                        <td>
+                            <input type='text' name='fear_1' placeholder='1.'/>
+                        </td>
+                        <td>
+                            <input type='text' name='thought_1'/>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <input type='text' name='fear_2' placeholder='2.'/>
+                        </td>
+                        <td>
+                            <input type='text' name='thought_2'/>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <input type='text' name='fear_3' placeholder='3.'/>
+                        </td>
+                        <td>
+                            <input type='text' name='thought_3'/>
+                        </td>
+                    </tr>
+                </table>
+            </form>
+            <script>
+                if (localStorage['exercise_1']) {
+                    var exercise_1 = JSON.parse(localStorage['exercise_1']);
+                    document.forms["exercise_2"]["fear_1"].value = exercise_1['fear_1'];
+                    document.forms["exercise_2"]["fear_2"].value = exercise_1['fear_2'];
+                    document.forms["exercise_2"]["fear_3"].value = exercise_1['fear_3'];
+                }
+                if (localStorage['exercise_2']) {
+                    var exercise_2 = JSON.parse(localStorage['exercise_2']);
+                    document.forms["exercise_2"]["thought_1"].value = exercise_2['thought_1'];
+                    document.forms["exercise_2"]["thought_2"].value = exercise_2['thought_2'];
+                    document.forms["exercise_2"]["thought_3"].value = exercise_2['thought_3'];
+                }
+                function submitExcerise_2() {
+                    var exercise_1 = {};
+                    for (var i = 1; i <= 3; i++) {
+                        if (document.forms["exercise_2"]["fear_"+i].value.length>0) {
+                            exercise_1["fear_"+i] = document.forms["exercise_2"]["fear_"+i].value;
+                        } else {
+                            exercise_1["fear_"+i] = "";
+                        }
+                    }
+                    localStorage.setItem('exercise_1', JSON.stringify(exercise_1));
+                    var exercise_2 = {};
+                    for (var i = 1; i <= 3; i++) {
+                        if (document.forms["exercise_2"]["thought_"+i].value.length>0) {
+                            exercise_2["thought_"+i] = document.forms["exercise_2"]["thought_"+i].value;
+                        } else {
+                            exercise_2["thought_"+i] = "";
+                        }
+                    }
+                    localStorage.setItem('exercise_2', JSON.stringify(exercise_2));                        
+                }
+            </script>
+
+        </div>
+        <!-- /content -->
+
+
+        <div data-role="footer" data-position="fixed">
+            <div data-role="navbar" data-iconpos="right">
+                <ul>
+                    <li>
+                        <a href="../index.html" data-rel="dialog" data-transition="pop">Back</a>
+                    </li>
+                    <li>
+                        <a href="../index.html">Home</a>
+                    </li>
+                    <li>
+                        <a href="section_1.2.html"onclick="submitExcerise_2();">Continue</a>
+                    </li>
+                </ul>
+            </div>
+            <!-- /navbar -->
+        </div>
+        <!-- /footer -->
+
+    </div>
+    <!-- /page -->
+
+</body>
+</html>
