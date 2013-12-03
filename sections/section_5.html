@@ -73,31 +73,13 @@
                         <td>
                         </td>
                     </tr>
-                    <tr>
-                        <td>
-                            <input type='text' value="EXAMPLE: I'm boring."/>         
-                        </td>
-                        <td>
-                            <div data-role="fieldcontain">
-                                <select data-native-menu="false" data-mini='true'>
-                                    <option value="rush">Mind Reading</option>
-                                </select>
-                            </div>
-                        </td>
-                        <td>
-                            <input type='text' value="EXAMPLE: I had the thought and still contributed to a conversation."/> </p>
-                        </td>
-                        <td>
-                        </td>
-
-                    </tr>
-                    <tr id='exercise_6_row_2'>
+                    <tr id='exercise_6_row_1'>
                         <td>
                             <input type='text' id='exercise_6_thought_1'/>
                         </td>
                         <td>
                             <div data-role="fieldcontain">
-                                <select id="exercise_6_strategy_1" data-native-menu="false">
+                                <select id="exercise_6_strategy_1" data-native-menu="false" data-mini='true'>
                                     <option value="none"></option>
                                     <option value="fortune_telling">Fortune-Telling</option>
                                     <option value="mind_reading">Mind Reading</option>
@@ -112,7 +94,6 @@
                             <input type='text' id='exercise_6_notice_1'/>
                         </td>
                         <td >
-                            <a href="#" onclick='exercise_6_remove_row(2);' data-role="button" data-icon="delete" data-iconpos="notext" data-mini="true" data-inline="true">Delete</a>
                         </td>
                     </tr>
                 </table>
@@ -136,7 +117,7 @@
                     var cell4=row.insertCell(3);
 
                     cell1.innerHTML="<input type='text' id='exercise_6_thought_"+row_number+"' />";
-                    cell2.innerHTML="<div data-role='fieldcontain'><select id='exercise_6_strategy_"+row_number+"' data-native-menu='false'><option value='none'></option><option value='fortune_telling'>Fortune-Telling</option><option value='mind_reading'>Mind Reading</option><option value='shoulding'>'Shoulding'</option><option value='portmortem'>Postmortem</option><option value='spotlight_effect'>The Spotlight Effect</option><option value='generating_stories'>Generating Stories</option></select></div>";
+                    cell2.innerHTML="<div data-role='fieldcontain'><select data-mini='true' id='exercise_6_strategy_"+row_number+"' data-native-menu='false'><option value='none'></option><option value='fortune_telling'>Fortune-Telling</option><option value='mind_reading'>Mind Reading</option><option value='shoulding'>'Shoulding'</option><option value='portmortem'>Postmortem</option><option value='spotlight_effect'>The Spotlight Effect</option><option value='generating_stories'>Generating Stories</option></select></div>";
                     cell3.innerHTML = "<input type='text' name='exercise_6_notice_1'/>";
                     cell4.innerHTML = "<a href='#' id='exercise_6_remove_"+row_number+"' onclick='exercise_6_remove_row("+row_number+");' data-role='button' data-icon='delete' data-iconpos='notext' data-mini='true' data-inline='true'>Delete</a>"
                     $('#page').trigger("pagecreate");
@@ -156,7 +137,7 @@
                         <a href="../index.html">Home</a>
                     </li>
                     <li>
-                        <a href="section_1.2.html"onclick="submitExcerise_2();">Continue</a>
+                        <a href="section_6.html"onclick="">Continue</a>
                     </li>
                 </ul>
             </div>
