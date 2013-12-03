@@ -71,6 +71,7 @@
             </form>
             <script>
                 if (localStorage['exercise_1']) {
+                    console.log('st');
                     var exercise_1 = JSON.parse(localStorage['exercise_1']);
                     document.forms["exercise_2"]["fear_1"].value = exercise_1['fear_1'];
                     document.forms["exercise_2"]["fear_2"].value = exercise_1['fear_2'];

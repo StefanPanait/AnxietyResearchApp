@@ -3,15 +3,7 @@
 
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-    <link rel="stylesheet" href="../lib/jquery.mobile-1.3.2.min.css" />
-    <link rel="stylesheet" href="../style.css" />
-    <script src="../lib/jquery-2.0.3.min.js"></script>
-        <script>
-        $(document).bind("mobileinit", function(){
-            $.mobile.defaultPageTransition = 'none';
-        });
-    </script>
-    <script src="../lib/jquery.mobile-1.3.2.min.js"></script>
+
 </head>
 
 <body>
@@ -57,19 +49,36 @@
             </p>
             <div data-role="fieldcontain">
                 <fieldset data-role="controlgroup">
-                    <input type="checkbox" name="checkbox-1" id="checkbox-1"/>
-                    <label for="checkbox-1">I shouldn't appear anxious.</label>
-                    <input type="checkbox" name="checkbox-2" id="checkbox-2"/>
-                    <label for="checkbox-2">I should be perfect.</label>
-                    <input type="checkbox" name="checkbox-3" id="checkbox-3"/>
-                    <label for="checkbox-3">I shouldn't inconvenience others.</label>
-                    <input type="checkbox" name="checkbox-4" id="checkbox-4"/>
-                    <label for="checkbox-4">I should always be in control. </label>
-                    <input type="checkbox" name="checkbox-5" id="checkbox-5"/>
-                    <label for="checkbox-5">I should always be funny and charming.</label>
+                    <input type="checkbox" id="should_1"/>
+                    <label for="should_1">I shouldn't appear anxious.</label>
+                    <input type="checkbox" id="should_2"/>
+                    <label for="should_2">I should be perfect.</label>
+                    <input type="checkbox" id="should_3"/>
+                    <label for="should_3">I shouldn't inconvenience others.</label>
+                    <input type="checkbox" id="should_4"/>
+                    <label for="should_4">I should always be in control. </label>
+                    <input type="checkbox" id="should_5"/>
+                    <label for="should_5">I should always be funny and charming.</label>
                 </fieldset>
             </div>
-
+            <a href="#" onclick='submitExcerise_should();' data-role="button" data-icon="check" data-iconpos="left" data-mini="true" data-inline="true">Save</a>
+            <script>
+                if (localStorage['exercise_should']) {
+                        var exercise_should = JSON.parse(localStorage['exercise_should']);
+                        for (var i = 1; i<=5; i++) {
+                            if (exercise_should['should_'+i]) {
+                                $('#should_'+i).attr("checked",true)
+                            }
+                        }
+                }
+                function submitExcerise_should() {
+                    var exercise_should = {};
+                    for (var i = 1; i <= 6; i++) {
+                        exercise_should["should_"+i] = $("#should_"+i).prop("checked");
+                    }
+                    localStorage.setItem('exercise_should', JSON.stringify(exercise_should));                       
+                }
+            </script>
             
             <h3>Postmortem: </h3> 
             <p>
@@ -91,18 +100,38 @@
             <p>
                 To try to get at some of your stories, complete the following phrases:.
             </p>
-            <label for="story_1"><b>In social situations I feel as if I am (for example, an imposter)</b> </label>
-            <input type="text" name="name" id="story_1" value=""  />
-            <label for="story_2"><b>In social situations I am someone who always (for example, says the wrong thing)</b> </label>
-            <input type="text" name="name" id="story_2" value=""  />
-            <label for="story_3"><b>In social situations I am someone who can't (for example, do small talk)</b> </label>
-            <input type="text" name="name" id="story_3" value=""  />
-            <label for="story_4"><b>In social situations my best attribute is (for example, being the listener)</b> </label>
-            <input type="text" name="name" id="story_4" value=""  />
-            <label for="story_5"><b>In social situations my worst attribute is (for example, being the listener)</b> </label>
-            <input type="text" name="name" id="story_5" value=""  />
-            <label for="story_6"><b>Record any other stories your mind generates:</b> </label>
-            <input type="text" name="name" id="story_6" value=""  />
+            <form id='exercise_3'>
+                <label for="story_1"><b>In social situations I feel as if I am (for example, an imposter)</b> </label>
+                <input type="text" id="story_1" value=""  />
+                <label for="story_2"><b>In social situations I am someone who always (for example, says the wrong thing)</b> </label>
+                <input type="text" id="story_2" value=""  />
+                <label for="story_3"><b>In social situations I am someone who can't (for example, do small talk)</b> </label>
+                <input type="text" id="story_3" value=""  />
+                <label for="story_4"><b>In social situations my best attribute is (for example, being the listener)</b> </label>
+                <input type="text" id="story_4" value=""  />
+                <label for="story_5"><b>In social situations my worst attribute is (for example, being the listener)</b> </label>
+                <input type="text" id="story_5" value=""  />
+                <label for="story_6"><b>Record any other stories your mind generates:</b> </label>
+                <input type="text" id="story_6" value=""  />
+                <a href="#" onclick='submitExcerise_3();' data-role="button" data-icon="check" data-iconpos="left" data-mini="true" data-inline="true">Save</a>
+            </form>
+            <script>
+                 if (localStorage['exercise_3']) {
+                    var exercise_3 = JSON.parse(localStorage['exercise_3']);
+                    for (var i = 1; i<=6; i++) {
+
+                        $('#story_'+i).val(exercise_3['story_'+i]);
+                    }
+                }
+                function submitExcerise_3() {
+                    var exercise_3 = {};
+                    for (var i = 1; i <= 6; i++) {
+                        exercise_3["story_"+i] = $("#story_"+i).val()
+                    }
+                    localStorage.setItem('exercise_3', JSON.stringify(exercise_3));                       
+                }
+            </script>
+
 
             <h2>Exercise 4: Types of Anxious Thinking</h2>
             <p>
@@ -110,7 +139,7 @@
                 See if you notice any trends. Does your mind tend to use the same type of thinking over and over, or does it prefer variety?
             </p>
 
-            <form name="exercise_4" id='exercise_4'>
+            <form id='exercise_4'>
                 <table border="0">
                     <tr>
                         <td>
@@ -132,14 +161,14 @@
                         </td>
                         <td>
                             <div data-role="fieldcontain">
-                                <select name="select-choice-1" id="fear_type_1" data-native-menu="false" data-mini='true'>
-                                    <option value="standard"></option>
-                                    <option value="standard">Fortune-Telling</option>
-                                    <option value="rush">Mind Reading</option>
-                                    <option value="express">"Shoulding"</option>
-                                    <option value="overnight">Postmortem</option>
-                                    <option value="overnight">The Spotlight Effect</option>
-                                    <option value="overnight">Generating Stories</option>
+                                <select id="fear_type_1" data-native-menu="false" data-mini='true'>
+                                    <option value="none"></option>
+                                    <option value="fortune_telling">Fortune-Telling</option>
+                                    <option value="mind_reading">Mind Reading</option>
+                                    <option value="shoulding">"Shoulding"</option>
+                                    <option value="portmortem">Postmortem</option>
+                                    <option value="spotlight_effect">The Spotlight Effect</option>
+                                    <option value="generating_stories">Generating Stories</option>
                                 </select>
                             </div>
                         </td>
@@ -153,14 +182,14 @@
                         </td>
                         <td>
                             <div data-role="fieldcontain">
-                                <select name="select-choice-1" id="fear_type_2" data-native-menu="false" data-mini='true'>
-                                    <option value="standard"></option>
-                                    <option value="standard">Fortune-Telling</option>
-                                    <option value="rush">Mind Reading</option>
-                                    <option value="express">"Shoulding"</option>
-                                    <option value="overnight">Postmortem</option>
-                                    <option value="overnight">The Spotlight Effect</option>
-                                    <option value="overnight">Generating Stories</option>
+                                <select id="fear_type_2" data-native-menu="false" data-mini='true'>
+                                    <option value="none"></option>
+                                    <option value="fortune_telling">Fortune-Telling</option>
+                                    <option value="mind_reading">Mind Reading</option>
+                                    <option value="shoulding">"Shoulding"</option>
+                                    <option value="portmortem">Postmortem</option>
+                                    <option value="spotlight_effect">The Spotlight Effect</option>
+                                    <option value="generating_stories">Generating Stories</option>
                                 </select>
                             </div>
                         </td>
@@ -174,20 +203,77 @@
                         </td>
                         <td>
                             <div data-role="fieldcontain">
-                                <select name="select-choice-1" id="fear_type_3" data-native-menu="false" data-mini='true'>
-                                    <option value="standard"></option>
-                                    <option value="standard">Fortune-Telling</option>
-                                    <option value="rush">Mind Reading</option>
-                                    <option value="express">"Shoulding"</option>
-                                    <option value="overnight">Postmortem</option>
-                                    <option value="overnight">The Spotlight Effect</option>
-                                    <option value="overnight">Generating Stories</option>
+                                <select id="fear_type_3" data-native-menu="false" data-mini='true'>
+                                    <option value="none"></option>
+                                    <option value="fortune_telling">Fortune-Telling</option>
+                                    <option value="mind_reading">Mind Reading</option>
+                                    <option value="shoulding">"Shoulding"</option>
+                                    <option value="portmortem">Postmortem</option>
+                                    <option value="spotlight_effect">The Spotlight Effect</option>
+                                    <option value="generating_stories">Generating Stories</option>
                                 </select>
                             </div>
                         </td>
                     </tr>
                 </table>
+                <a href="#" onclick='submitExcerise_4();' data-role="button" data-icon="check" data-iconpos="left" data-mini="true" data-inline="true">Save</a>
             </form>
+
+             <script>
+                if (localStorage['exercise_1']) {
+                    console.log('st');
+                    var exercise_1 = JSON.parse(localStorage['exercise_1']);
+                    document.forms["exercise_4"]["fear_1"].value = exercise_1['fear_1'];
+                    document.forms["exercise_4"]["fear_2"].value = exercise_1['fear_2'];
+                    document.forms["exercise_4"]["fear_3"].value = exercise_1['fear_3'];
+                }
+                if (localStorage['exercise_2']) {
+                    var exercise_2 = JSON.parse(localStorage['exercise_2']);
+                    document.forms["exercise_4"]["thought_1"].value = exercise_2['thought_1'];
+                    document.forms["exercise_4"]["thought_2"].value = exercise_2['thought_2'];
+                    document.forms["exercise_4"]["thought_3"].value = exercise_2['thought_3'];
+                }
+                if (localStorage['exercise_4']) {
+                    var exercise_4 = JSON.parse(localStorage['exercise_4']);
+
+                    $("#fear_type_1").val(exercise_4['fear_type_1']).attr('selected', true)
+                    $("#fear_type_2").val(exercise_4['fear_type_2']).attr('selected', true)
+                    $("#fear_type_3").val(exercise_4['fear_type_3']).attr('selected', true)
+
+
+/*                    $('#page').trigger("pagecreate");*/
+
+                }
+               
+                function submitExcerise_4() {
+                    var exercise_1 = {};
+                    for (var i = 1; i <= 3; i++) {
+                        if (document.forms["exercise_4"]["fear_"+i].value.length>0) {
+                            exercise_1["fear_"+i] = document.forms["exercise_4"]["fear_"+i].value;
+                        } else {
+                            exercise_1["fear_"+i] = "";
+                        }
+                    }
+                    localStorage.setItem('exercise_1', JSON.stringify(exercise_1));
+                    var exercise_2 = {};
+                    for (var i = 1; i <= 3; i++) {
+                        if (document.forms["exercise_4"]["thought_"+i].value.length>0) {
+                            exercise_2["thought_"+i] = document.forms["exercise_4"]["thought_"+i].value;
+                        } else {
+                            exercise_2["thought_"+i] = "";
+                        }
+                    }
+                    localStorage.setItem('exercise_2', JSON.stringify(exercise_2));
+
+                    var exercise_4 = {};
+                    for (var i = 1; i <= 3; i++) {
+                        console.log($("select#fear_type_"+i).val())
+                        exercise_4['fear_type_'+i] = $("#fear_type_"+i).val();
+                    }
+                    localStorage.setItem('exercise_4', JSON.stringify(exercise_4));
+
+                }
+            </script>
 
         </div>
         <!-- /content -->
