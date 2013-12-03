@@ -136,7 +136,7 @@
                     var cell4=row.insertCell(3);
 
                     cell1.innerHTML="<input type='text' id='exercise_6_thought_"+row_number+"' />";
-                    cell2.innerHTML="<div data-role='fieldcontain'><select name='exercise_6_strategy_1' id='exercise_6_strategy_"+row_number+"' data-native-menu='false'><option value='none'></option><option value='fortune_telling'>Fortune-Telling</option><option value='mind_reading'>Mind Reading</option><option value='shoulding'>'Shoulding'</option><option value='portmortem'>Postmortem</option><option value='spotlight_effect'>The Spotlight Effect</option><option value='generating_stories'>Generating Stories</option></select></div>";
+                    cell2.innerHTML="<div data-role='fieldcontain'><select id='exercise_6_strategy_"+row_number+"' data-native-menu='false'><option value='none'></option><option value='fortune_telling'>Fortune-Telling</option><option value='mind_reading'>Mind Reading</option><option value='shoulding'>'Shoulding'</option><option value='portmortem'>Postmortem</option><option value='spotlight_effect'>The Spotlight Effect</option><option value='generating_stories'>Generating Stories</option></select></div>";
                     cell3.innerHTML = "<input type='text' name='exercise_6_notice_1'/>";
                     cell4.innerHTML = "<a href='#' id='exercise_6_remove_"+row_number+"' onclick='exercise_6_remove_row("+row_number+");' data-role='button' data-icon='delete' data-iconpos='notext' data-mini='true' data-inline='true'>Delete</a>"
                     $('#page').trigger("pagecreate");
