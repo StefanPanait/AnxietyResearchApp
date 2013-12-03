@@ -3,10 +3,6 @@
 
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-    <link rel="stylesheet" href="http://code.jquery.com/mobile/1.2.0/jquery.mobile-1.2.0.min.css" />
-    <link rel="stylesheet" href="style.css" />
-    <script src="http://code.jquery.com/jquery-1.8.2.min.js"></script>
-    <script src="http://code.jquery.com/mobile/1.2.0/jquery.mobile-1.2.0.min.js"></script>
 </head>
 
 <body>
@@ -95,8 +91,7 @@
                             exercise_2["thought_"+i] = "";
                         }
                     }
-                    localStorage.setItem('exercise_2', JSON.stringify(exercise_2));
-                    alert("secton one done!");                
+                    localStorage.setItem('exercise_2', JSON.stringify(exercise_2));             
                 }
             </script>
 
@@ -114,7 +109,7 @@
                         <a href="../index.html">Home</a>
                     </li>
                     <li>
-                        <a href="section_1.2.html"onclick="submitExcerise_2();">Continue</a>
+                        <a href="section_2.html"onclick="submitExcerise_2();">Continue</a>
                     </li>
                 </ul>
             </div>
