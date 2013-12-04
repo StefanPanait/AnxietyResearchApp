@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta name="viewport" content="width=device-width, user-scalable=no" />
+</head>
+
+<body>
+
+    <div data-role="page" data-position="fixed">
+        <div data-role="header">
+            <h1>Top 3 Feared Social Situations</h>
+        </div>
+        <!-- /header -->
+
+        <div data-role="content">
+                <form name="exercise_1" id="exercise_1">
+                    <div data-role='fieldcontain' >
+                        <input type='text' name='fear_1' placeholder='1.' onchange='submitExcerise_1()'/>
+                        <input type='text' name='fear_2' placeholder='2.' onchange='submitExcerise_1()'/>
+                        <input type='text' name='fear_3' placeholder='3.' onchange='submitExcerise_1()'/>
+                    </div>
+                </form>
+                <script>
+                    if (localStorage['exercise_1']) {
+                        var exercise_1 = JSON.parse(localStorage['exercise_1']);
+                        document.forms["exercise_1"]["fear_1"].value = exercise_1['fear_1'];
+                        document.forms["exercise_1"]["fear_2"].value = exercise_1['fear_2'];
+                        document.forms["exercise_1"]["fear_3"].value = exercise_1['fear_3'];
+                    }
+                    function submitExcerise_1() {
+                        var exercise_1 = {};
+                        for (var i = 1; i <= 3; i++) {
+                            if (document.forms["exercise_1"]["fear_"+i].value.length>0) {
+                                exercise_1["fear_"+i] = document.forms["exercise_1"]["fear_"+i].value;
+                            } else {
+                                exercise_1["fear_"+i] = "";
+                            }
+                        }
+                        localStorage.setItem('exercise_1', JSON.stringify(exercise_1));                       
+                    }
+                </script>
+
+        </div>
+        <!-- /content -->
+                    
+        <div data-role="footer" data-position="fixed">
+            <div data-role="navbar" data-iconpos="right">
+                 <ul>
+                    <li>
+                        <a href="#" data-rel="dialog" class="ui-btn-active ui-state-persist">Previous</a>
+                    </li>
+                    <li>
+                        <a href="../index.html">Home</a>
+                    </li>
+                    <li>
+                        <a href="../exercises/exercise_2.html" onclick="submitExcerise_1();">Continue</a>
+                    </li>
+                </ul>
+            </div>
+            <!-- /navbar -->
+        </div>
+        <!-- /footer -->
+
+    </div>
+    <!-- /page -->
+
+</body>
+</html>

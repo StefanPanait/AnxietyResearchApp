@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+</head>
+
+<body>
+
+    <div data-role="page" data-position="fixed">
+        <div data-role="header">
+            <h1>Exercise 4: Generating Stories</h>
+        </div>
+        <!-- /header -->
+
+        <div data-role="content">
+            <p>
+                To try to get at some of your stories, complete the following phrases:.
+            </p>
+            <form id='exercise_4'>
+                <label for="story_1"><b>In social situations I feel as if I am (for example, an imposter)</b> </label>
+                <input type="text" id="story_1" value="" onchange='submitExcerise_4()' />
+                <label for="story_2"><b>In social situations I am someone who always (for example, says the wrong thing)</b> </label>
+                <input type="text" id="story_2" value="" onchange='submitExcerise_4()' />
+                <label for="story_3"><b>In social situations I am someone who can't (for example, do small talk)</b> </label>
+                <input type="text" id="story_3" value="" onchange='submitExcerise_4()' />
+                <label for="story_4"><b>In social situations my best attribute is (for example, being the listener)</b> </label>
+                <input type="text" id="story_4" value="" onchange='submitExcerise_4()' />
+                <label for="story_5"><b>In social situations my worst attribute is (for example, being the listener)</b> </label>
+                <input type="text" id="story_5" value="" onchange='submitExcerise_4()' />
+                <label for="story_6"><b>Record any other stories your mind generates:</b> </label>
+                <input type="text" id="story_6" value="" onchange='submitExcerise_4()' />
+            </form>
+            <script>
+                 if (localStorage['exercise_4']) {
+                    var exercise_4 = JSON.parse(localStorage['exercise_4']);
+                    for (var i = 1; i<=6; i++) {
+
+                        $('#story_'+i).val(exercise_4['story_'+i]);
+                    }
+                }
+                function submitExcerise_4() {
+                    var exercise_4 = {};
+                    for (var i = 1; i <= 6; i++) {
+                        exercise_4["story_"+i] = $("#story_"+i).val()
+                    }
+                    localStorage.setItem('exercise_4', JSON.stringify(exercise_4));                       
+                }
+            </script>
+        </div>
+        <!-- /content -->
+
+
+        <div data-role="footer" data-position="fixed">
+            <div data-role="navbar" data-iconpos="right">
+                <ul>
+                    <li>
+                        <a href="exercise_3.html">Previous</a>
+                    </li>
+                    <li>
+                        <a href="../index.html">Home</a>
+                    </li>
+                    <li>
+                        <a href="exercise_5.html">Continue</a>
+                    </li>
+                </ul>
+            </div>
+            <!-- /navbar -->
+        </div>
+        <!-- /footer -->
+
+    </div>
+    <!-- /page -->
+
+</body>
+</html>

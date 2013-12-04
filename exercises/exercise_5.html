@@ -10,136 +10,17 @@
 
     <div data-role="page" data-position="fixed">
         <div data-role="header">
-            <h1>Types of Anxious Thinking</h>
+            <h1>Exercise 5: Types of Anxious Thinking</h1>
         </div>
         <!-- /header -->
 
         <div data-role="content">
             <p>
-                We are all familiar with basic types of anxious thinking, such as:
-            </p>
-            
-                <li><p>worrying (I won't fit in),</p></li>
-                <li><p>having anxious memories (It's just like that awful speech I gave in seventh grade),</p></li>
-                <li><p>evaluating or judging (This isn't going very well, You look like an idiot), and </p></li>
-                <li><p>making negative comparisons (He's way more interesting than I am). </p></li>
-
-            <p>
-                Other, slightly more elaborate types of thinking the socially anxious mind favors include the following.
-                
-            </p>
-            <h3> Fortune-Telling: </h3>
-            <p>
-                When your mind predicts what will happen, usually something negative
-            </p>
-            <p> 
-                <b>EXAMPLE:</b> I won't have anything to say, I'll have a panic attack and won't be able to speak, and My coworkers will discover that I'm incompetent. 
-            </p>
-            <h3>Mind Reading: </h3>
-            <p> 
-                When your mind tells you what others are thinking about you, usually in the form of judgmental thoughts. 
-            </p> 
-            <p>
-                <b>EXAMPLE:</b> thoughts starting with He thinks..., She thinks..., or They think.. (for example, She must think I'm a nervous wreck or They think I'm stupid and boring).
-            </p>
-
-            <h3>"Shoulding": </h3>
-            <p>
-                Using statements that include the word "should," is a popular activity of the socially anxious mind. Do any of the following "should" phrases sound familiar?
-            </p>
-            <h2>Exercise 3: "Shoulding"</h2>
-            <div data-role="fieldcontain">
-                <fieldset data-role="controlgroup">
-                    <input type="checkbox" id="should_1" onchange='submitExcerise_should()'/>
-                    <label for="should_1">I shouldn't appear anxious.</label>
-                    <input type="checkbox" id="should_2" onchange='submitExcerise_should()'/>
-                    <label for="should_2">I should be perfect.</label>
-                    <input type="checkbox" id="should_3" onchange='submitExcerise_should()'/>
-                    <label for="should_3">I shouldn't inconvenience others.</label>
-                    <input type="checkbox" id="should_4" onchange='submitExcerise_should()'/>
-                    <label for="should_4">I should always be in control. </label>
-                    <input type="checkbox" id="should_5" onchange='submitExcerise_should()'/>
-                    <label for="should_5">I should always be funny and charming.</label>
-                </fieldset>
-            </div>
-
-            <script>
-                if (localStorage['exercise_should']) {
-                        var exercise_should = JSON.parse(localStorage['exercise_should']);
-                        for (var i = 1; i<=5; i++) {
-                            if (exercise_should['should_'+i]) {
-                                $('#should_'+i).attr("checked",true)
-                            }
-                        }
-                }
-                function submitExcerise_should() {
-                    var exercise_should = {};
-                    for (var i = 1; i <= 6; i++) {
-                        exercise_should["should_"+i] = $("#should_"+i).prop("checked");
-                    }
-                    localStorage.setItem('exercise_should', JSON.stringify(exercise_should));
-
-                }
-            </script>
-            
-            <h3>Postmortem: </h3> 
-            <p>
-                When your mind rehashes or ruminates about what you think happened (or should have happened) in a social situation.The following is an example of a "postmortem" review that Jack engaged in after he gave a presentation at school:
-            </p>
-            <p>
-                <b>EXAMPLE:</b> <i>Oh no, I really screwed up that presentation. I should have prepared more. I can't believe I made that stupid comment about finances. And I forgot to mention the plan I've been preparing. What an idiot! The prof sure had a disappointed look on her face. I bet she dislikes having me in her class. I'm definitely going to fail!</i>
-            </p>
-            <h3>The Spotlight Effect: </h3> 
-            <p>
-                To always feel as if you are the center of attention, as if a spotlight were shining on you for everyone to see (and judge you). 
-            </p>
-            <h3>Generating Stories:</h3> 
-            <p>
-                Generating Stories: generating stories specifically about who you are in social situations, sometimes pretty negative stories (for example, a story about you as a loser).
-            </p> 
-
-            <h2>Exercise 4: Generating Stories</h2>
-            <p>
-                To try to get at some of your stories, complete the following phrases:.
-            </p>
-            <form id='exercise_4'>
-                <label for="story_1"><b>In social situations I feel as if I am (for example, an imposter)</b> </label>
-                <input type="text" id="story_1" value="" onchange='submitExcerise_4()' />
-                <label for="story_2"><b>In social situations I am someone who always (for example, says the wrong thing)</b> </label>
-                <input type="text" id="story_2" value="" onchange='submitExcerise_4()' />
-                <label for="story_3"><b>In social situations I am someone who can't (for example, do small talk)</b> </label>
-                <input type="text" id="story_3" value="" onchange='submitExcerise_4()' />
-                <label for="story_4"><b>In social situations my best attribute is (for example, being the listener)</b> </label>
-                <input type="text" id="story_4" value="" onchange='submitExcerise_4()' />
-                <label for="story_5"><b>In social situations my worst attribute is (for example, being the listener)</b> </label>
-                <input type="text" id="story_5" value="" onchange='submitExcerise_4()' />
-                <label for="story_6"><b>Record any other stories your mind generates:</b> </label>
-                <input type="text" id="story_6" value="" onchange='submitExcerise_4()' />
-            </form>
-            <script>
-                 if (localStorage['exercise_4']) {
-                    var exercise_4 = JSON.parse(localStorage['exercise_4']);
-                    for (var i = 1; i<=6; i++) {
-
-                        $('#story_'+i).val(exercise_4['story_'+i]);
-                    }
-                }
-                function submitExcerise_4() {
-                    var exercise_4 = {};
-                    for (var i = 1; i <= 6; i++) {
-                        exercise_4["story_"+i] = $("#story_"+i).val()
-                    }
-                    localStorage.setItem('exercise_4', JSON.stringify(exercise_4));                       
-                }
-            </script>
-
-            <h2>Exercise 5: Types of Anxious Thinking</h2>
-            <p>
                 Now that we have covered the most common types of anxious thinking, look at your "Feared Social Situations" and "Anxious Thoughts" (from <b>Exercise 1</b> and <b>2</b>) and, in the "Types of Anxious Thinking" column, fill in as many types of thinking as you can identify for each of the anxious thoughts you recorded. 
                 See if you notice any trends. Does your mind tend to use the same type of thinking over and over, or does it prefer variety?
             </p>
 
-             <form id='exercise_5'>
+            <form id='exercise_5'>
                 <table border="0">
                     <tr>
                         <td>
@@ -270,7 +151,6 @@
                 }
             </script>
 
-
         </div>
         <!-- /content -->
 
@@ -279,13 +159,13 @@
             <div data-role="navbar" data-iconpos="right">
                 <ul>
                     <li>
-                        <a href="section_1.html" >Previous</a>
+                        <a href="exercise_4.html">Previous</a>
                     </li>
                     <li>
                         <a href="../index.html">Home</a>
                     </li>
                     <li>
-                        <a href="section_3.html">Continue</a>
+                        <a href="exercise_6.html">Continue</a>
                     </li>
                 </ul>
             </div>
