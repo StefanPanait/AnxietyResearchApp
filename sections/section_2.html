@@ -49,19 +49,19 @@
             </p>
             <div data-role="fieldcontain">
                 <fieldset data-role="controlgroup">
-                    <input type="checkbox" id="should_1"/>
+                    <input type="checkbox" id="should_1" onchange='submitExcerise_should()'/>
                     <label for="should_1">I shouldn't appear anxious.</label>
-                    <input type="checkbox" id="should_2"/>
+                    <input type="checkbox" id="should_2" onchange='submitExcerise_should()'/>
                     <label for="should_2">I should be perfect.</label>
-                    <input type="checkbox" id="should_3"/>
+                    <input type="checkbox" id="should_3" onchange='submitExcerise_should()'/>
                     <label for="should_3">I shouldn't inconvenience others.</label>
-                    <input type="checkbox" id="should_4"/>
+                    <input type="checkbox" id="should_4" onchange='submitExcerise_should()'/>
                     <label for="should_4">I should always be in control. </label>
-                    <input type="checkbox" id="should_5"/>
+                    <input type="checkbox" id="should_5" onchange='submitExcerise_should()'/>
                     <label for="should_5">I should always be funny and charming.</label>
                 </fieldset>
             </div>
-            <a href="#" onclick='submitExcerise_should();' data-role="button" data-icon="check" data-iconpos="left" data-mini="true" data-inline="true">Save</a>
+
             <script>
                 if (localStorage['exercise_should']) {
                         var exercise_should = JSON.parse(localStorage['exercise_should']);
@@ -76,7 +76,8 @@
                     for (var i = 1; i <= 6; i++) {
                         exercise_should["should_"+i] = $("#should_"+i).prop("checked");
                     }
-                    localStorage.setItem('exercise_should', JSON.stringify(exercise_should));                       
+                    localStorage.setItem('exercise_should', JSON.stringify(exercise_should));
+
                 }
             </script>
             
@@ -102,18 +103,17 @@
             </p>
             <form id='exercise_3'>
                 <label for="story_1"><b>In social situations I feel as if I am (for example, an imposter)</b> </label>
-                <input type="text" id="story_1" value=""  />
+                <input type="text" id="story_1" value="" onchange='submitExcerise_3()' />
                 <label for="story_2"><b>In social situations I am someone who always (for example, says the wrong thing)</b> </label>
-                <input type="text" id="story_2" value=""  />
+                <input type="text" id="story_2" value="" onchange='submitExcerise_3()' />
                 <label for="story_3"><b>In social situations I am someone who can't (for example, do small talk)</b> </label>
-                <input type="text" id="story_3" value=""  />
+                <input type="text" id="story_3" value="" onchange='submitExcerise_3()' />
                 <label for="story_4"><b>In social situations my best attribute is (for example, being the listener)</b> </label>
-                <input type="text" id="story_4" value=""  />
+                <input type="text" id="story_4" value="" onchange='submitExcerise_3()' />
                 <label for="story_5"><b>In social situations my worst attribute is (for example, being the listener)</b> </label>
-                <input type="text" id="story_5" value=""  />
+                <input type="text" id="story_5" value="" onchange='submitExcerise_3()' />
                 <label for="story_6"><b>Record any other stories your mind generates:</b> </label>
-                <input type="text" id="story_6" value=""  />
-                <a href="#" onclick='submitExcerise_3();' data-role="button" data-icon="check" data-iconpos="left" data-mini="true" data-inline="true">Save</a>
+                <input type="text" id="story_6" value="" onchange='submitExcerise_3()' />
             </form>
             <script>
                  if (localStorage['exercise_3']) {
@@ -154,14 +154,14 @@
                     </tr>
                     <tr>
                         <td>
-                            <input type='text' name='fear_1' id='fear_1' placeholder='1.'/>
+                            <input type='text' name='fear_1' id='fear_1' placeholder='1.' onchange='submitExcerise_4()'/>
                         </td>
                         <td>
-                            <input type='text' name='thought_1'/>
+                            <input type='text' name='thought_1' onchange='submitExcerise_4()'/>
                         </td>
                         <td>
                             <div data-role="fieldcontain">
-                                <select id="fear_type_1" data-native-menu="false" data-mini='true'>
+                                <select id="fear_type_1" data-native-menu="false" data-mini='true' onchange='submitExcerise_4()'>
                                     <option value="none"></option>
                                     <option value="fortune_telling">Fortune-Telling</option>
                                     <option value="mind_reading">Mind Reading</option>
@@ -175,14 +175,14 @@
                     </tr>
                     <tr>
                         <td>
-                            <input type='text' name='fear_2' placeholder='2.'/>
+                            <input type='text' name='fear_2' placeholder='2.' onchange='submitExcerise_4()'/>
                         </td>
                         <td>
-                            <input type='text' name='thought_2'/>
+                            <input type='text' name='thought_2' onchange='submitExcerise_4()'/>
                         </td>
                         <td>
                             <div data-role="fieldcontain">
-                                <select id="fear_type_2" data-native-menu="false" data-mini='true'>
+                                <select id="fear_type_2" data-native-menu="false" data-mini='true' onchange='submitExcerise_4()'>
                                     <option value="none"></option>
                                     <option value="fortune_telling">Fortune-Telling</option>
                                     <option value="mind_reading">Mind Reading</option>
@@ -196,14 +196,14 @@
                     </tr>
                     <tr>
                         <td>
-                            <input type='text' name='fear_3' placeholder='3.'/>
+                            <input type='text' name='fear_3' placeholder='3.' onchange='submitExcerise_4()'/>
                         </td>
                         <td>
-                            <input type='text' name='thought_3'/>
+                            <input type='text' name='thought_3' onchange='submitExcerise_4()'/>
                         </td>
                         <td>
                             <div data-role="fieldcontain">
-                                <select id="fear_type_3" data-native-menu="false" data-mini='true'>
+                                <select id="fear_type_3" data-native-menu="false" data-mini='true' onchange='submitExcerise_4()'>
                                     <option value="none"></option>
                                     <option value="fortune_telling">Fortune-Telling</option>
                                     <option value="mind_reading">Mind Reading</option>
@@ -216,7 +216,6 @@
                         </td>
                     </tr>
                 </table>
-                <a href="#" onclick='submitExcerise_4();' data-role="button" data-icon="check" data-iconpos="left" data-mini="true" data-inline="true">Save</a>
             </form>
 
              <script>
@@ -239,10 +238,6 @@
                     $("#fear_type_1").val(exercise_4['fear_type_1']).attr('selected', true)
                     $("#fear_type_2").val(exercise_4['fear_type_2']).attr('selected', true)
                     $("#fear_type_3").val(exercise_4['fear_type_3']).attr('selected', true)
-
-
-/*                    $('#page').trigger("pagecreate");*/
-
                 }
                
                 function submitExcerise_4() {
