@@ -375,7 +375,7 @@ exercise_7 += "                <br>";
 exercise_7 += "                To get as much practice as possible, try defusing from everyday thoughts (for example, <i>I am having the thought that I want to eat a muffin for breakfast)<\/i> as well as social-anxiety thoughts. ";
 exercise_7 += "                <br>";
 exercise_7 += "                <br>";
-exercise_7 += "                You can try some of the strategies right when you notice the thought (e.g, <b>naming what the mind is doing<\/b> or <b>thanking the mind<\/b>); for others, you may want to wait until you have some time to yourself (e.g., <b>ditching the meaning of your thoughts<\/b> or <b>awareness of thinking<\/b>). ";
+exercise_7 += "                You can try some of the strategies right when you notice the thought (e.g, <a href=\"#definition_naming_the_mind\" data-rel=\"popup\"><b>naming what the mind is doing<\/b><\/a> or <a href=\"#definition_thanking_the_mind\" data-rel=\"popup\"><b>thanking the mind<\/b><\/a>); for others, you may want to wait until you have some time to yourself (e.g., <a href=\"#definition_ditching_the_meaning\" data-rel=\"popup\"><b>ditching the meaning of your thoughts<\/b><\/a> or <a href=\"#definition_awareness_of_thinking\" data-rel=\"popup\"><b>awareness of thinking<\/b><\/a>). ";
 exercise_7 += "            <\/p>";
 exercise_7 += "";
 exercise_7 += "            <form name=\"exercise_7\" id='exercise_7'>";
@@ -419,6 +419,78 @@ exercise_7 += "                    <\/tr>";
 exercise_7 += "                <\/table>";
 exercise_7 += "            <\/form>";
 exercise_7 += "            <a href=\"#\" id='2' onclick='exercise_7_add_row();' data-role=\"button\" >Add Entry<\/a>";
+exercise_7 += "            <div id=\"definition_naming_the_mind\" data-role=\"popup\" data-theme=\"e\" data-overlay-theme=\"a\" class=\"ui-content\">";
+exercise_7 += "                <a href=\"#\" data-rel=\"back\" data-role=\"button\" data-theme=\"a\" data-icon=\"delete\" data-iconpos=\"notext\" class=\"ui-btn-right\">Close<\/a>";
+exercise_7 += "                <h3> Naming What the Mind Is Doing: <\/h3>";
+exercise_7 += "                <p>";
+exercise_7 += "                    Here you name the type of thinking that your mind is engaged in. <b>EXAMPLES<\/b> are:";
+exercise_7 += "                <\/p><ul>";
+exercise_7 += "                    <li><p>I am worrying that my hands will shake<\/p><\/li>";
+exercise_7 += "                    <li><p>I'm engaged in mind reading right now<\/p><\/li>";
+exercise_7 += "                    <li><p>I'm doing the postmortem<\/p><\/li>";
+exercise_7 += "                    <li><p>I'm \"shoulding\" <\/p><\/li>";
+exercise_7 += "                <p><\/ul>";
+exercise_7 += "                    Some people find that this enables them to get out of their mind and refocus on their task, whatever that may be (doing a presentation, interacting at a party or making small talk, for example). ";
+exercise_7 += "                <\/p>";
+exercise_7 += "            <\/div>";
+exercise_7 += "            <div id=\"definition_thanking_the_mind\" data-role=\"popup\" data-theme=\"e\" data-overlay-theme=\"a\" class=\"ui-content\">";
+exercise_7 += "                <a href=\"#\" data-rel=\"back\" data-role=\"button\" data-theme=\"a\" data-icon=\"delete\" data-iconpos=\"notext\" class=\"ui-btn-right\">Close<\/a>";
+exercise_7 += "                <h3> Thanking the Mind: <\/h3>";
+exercise_7 += "                <p>";
+exercise_7 += "                    When your mind thinks about the dangers that await you in social situations, it is just doing its job, and it deserves some credit for that (even if it ultimately is not helpful). Hence, a popular defusion strategy is to thank the mind for thoughts. ";
+exercise_7 += "                <\/p>";
+exercise_7 += "            <\/div>";
+exercise_7 += "            <div id=\"definition_ditching_the_meaning\" data-role=\"popup\" data-theme=\"e\" data-overlay-theme=\"a\" class=\"ui-content\">";
+exercise_7 += "                <a href=\"#\" data-rel=\"back\" data-role=\"button\" data-theme=\"a\" data-icon=\"delete\" data-iconpos=\"notext\" class=\"ui-btn-right\">Close<\/a>";
+exercise_7 += "            <h3> Ditching the Meaning of Your Thoughts: <\/h3>";
+exercise_7 += "            <p>";
+exercise_7 += "                Given that we tend to get caught up in the meanings of the words that make up our thoughts, several defusion strategies involve highlighting aspects of words other than their meanings, such as how they sound or look.";
+exercise_7 += "                <br>";
+exercise_7 += "                <b><i> EXAMPLES: <\/b><\/i>";
+exercise_7 += "            <\/p>";
+exercise_7 += "            <ul><li> <h4> Repetition. <\/h4>";
+exercise_7 += "                Try this now: repeat the word \"boring\" very quickly for thirty to forty-five seconds, paying attention to how the word sounds as you do it";
+exercise_7 += "                <ul><li><p>";
+exercise_7 += "                    What did you notice? Emily commented that after twenty seconds, she could only hear \"boing\", and the word lost some of its heaviness for her.";
+exercise_7 += "                <\/p><\/li>";
+exercise_7 += "                <li><p>";
+exercise_7 += "                    Try this again with a word or phrase that you tend to fuse with in your feared social situations.";
+exercise_7 += "                <\/p><\/li><\/ul>";
+exercise_7 += "            <\/li>";
+exercise_7 += "            <li> <h4> Other voices. <\/h4>";
+exercise_7 += "                <p>";
+exercise_7 += "                    Try speaking your thoughts in someone else's voice, such as a television personality, politician, or cartoon character.";
+exercise_7 += "                <\/p>";
+exercise_7 += "            <\/li>";
+exercise_7 += "            <li> <h4> Singing your thoughts. <\/h4>";
+exercise_7 += "                <p>";
+exercise_7 += "                    Try singing your thoughts to the tune of a song such as \"Happy Birthday\" or to your favorite (or least favorite) song. Try searching for songs that include phrases that are relevant to you (\"He's So Shy\" by The Pointer Sisters is an example).";
+exercise_7 += "                <\/p>";
+exercise_7 += "            <\/li>";
+exercise_7 += "            <li><h4> Seeing your thoughts. <\/h4>";
+exercise_7 += "                <p>";
+exercise_7 += "                    Notice how your thoughts look by printing, writing, or typing them in different fonts and colors.";
+exercise_7 += "                <\/p>";
+exercise_7 += "            <\/li><\/ul>";
+exercise_7 += "            <\/div>";
+exercise_7 += "            <div id=\"definition_awareness_of_thinking\" data-role=\"popup\" data-theme=\"e\" data-overlay-theme=\"a\" class=\"ui-content\">";
+exercise_7 += "                <a href=\"#\" data-rel=\"back\" data-role=\"button\" data-theme=\"a\" data-icon=\"delete\" data-iconpos=\"notext\" class=\"ui-btn-right\">Close<\/a>";
+exercise_7 += "            <h3> \"I Am Having the Thought That...\":  <\/h3>";
+exercise_7 += "            <p>";
+exercise_7 += "                With this strategy, you simply acknowledge that the mind is thinking by saying to yourself, <i>I am having the thought that<\/i> ___________. Try it now by reading aloud the following two sentences, noticing any differences in their emotional impact:";
+exercise_7 += "                <br>";
+exercise_7 += "                <i>I am going to blush.";
+exercise_7 += "                <br>";
+exercise_7 += "                I am having the thought that I am going to blush.<\/i>";
+exercise_7 += "                <br>";
+exercise_7 += "                What did you notice? Some people find the second sentence to be less anxiety provoking or to seem less \"real.\" Try it again with a thought that is relevant for you (e.g. <i>my voice is going to quiver; I am going to sweat; I am not going to be able to control my facial expressions<\/i>). ";
+exercise_7 += "            <\/p>";
+exercise_7 += "            <\/div>";
+
+
+
+
+
 
 
 function loadExercise_7() {
