@@ -47,40 +47,13 @@
             <p>
                 Using statements that include the word "should," is a popular activity of the socially anxious mind. Do any of the following "should" phrases sound familiar?
             </p>
-            <h2>Exercise 3: "Shoulding"</h2>
-            <div data-role="fieldcontain">
-                <fieldset data-role="controlgroup">
-                    <input type="checkbox" id="should_1" onchange='submitExcerise_should()'/>
-                    <label for="should_1">I shouldn't appear anxious.</label>
-                    <input type="checkbox" id="should_2" onchange='submitExcerise_should()'/>
-                    <label for="should_2">I should be perfect.</label>
-                    <input type="checkbox" id="should_3" onchange='submitExcerise_should()'/>
-                    <label for="should_3">I shouldn't inconvenience others.</label>
-                    <input type="checkbox" id="should_4" onchange='submitExcerise_should()'/>
-                    <label for="should_4">I should always be in control. </label>
-                    <input type="checkbox" id="should_5" onchange='submitExcerise_should()'/>
-                    <label for="should_5">I should always be funny and charming.</label>
-                </fieldset>
-            </div>
-
+            <div id='exercise_3'></div>
             <script>
-                if (localStorage['exercise_should']) {
-                        var exercise_should = JSON.parse(localStorage['exercise_should']);
-                        for (var i = 1; i<=5; i++) {
-                            if (exercise_should['should_'+i]) {
-                                $('#should_'+i).attr("checked",true)
-                            }
-                        }
-                }
-                function submitExcerise_should() {
-                    var exercise_should = {};
-                    for (var i = 1; i <= 6; i++) {
-                        exercise_should["should_"+i] = $("#should_"+i).prop("checked");
-                    }
-                    localStorage.setItem('exercise_should', JSON.stringify(exercise_should));
-
-                }
+                document.getElementById('exercise_3').innerHTML = exercise_3;
+                loadExercise_3();
             </script>
+
+
             
             <h3>Postmortem: </h3> 
             <p>
@@ -97,178 +70,19 @@
             <p>
                 Generating Stories: generating stories specifically about who you are in social situations, sometimes pretty negative stories (for example, a story about you as a loser).
             </p> 
-
-            <h2>Exercise 4: Generating Stories</h2>
-            <p>
-                To try to get at some of your stories, complete the following phrases:.
-            </p>
-            <form id='exercise_4'>
-                <label for="story_1"><b>In social situations I feel as if I am (for example, an imposter)</b> </label>
-                <input type="text" id="story_1" value="" placeholder='' onchange='submitExcerise_4()' />
-                <label for="story_2"><b>In social situations I am someone who always (for example, says the wrong thing)</b> </label>
-                <input type="text" id="story_2" value="" placeholder='' onchange='submitExcerise_4()' />
-                <label for="story_3"><b>In social situations I am someone who can't (for example, do small talk)</b> </label>
-                <input type="text" id="story_3" value="" placeholder='' onchange='submitExcerise_4()' />
-                <label for="story_4"><b>In social situations my best attribute is (for example, being the listener)</b> </label>
-                <input type="text" id="story_4" value="" placeholder='' onchange='submitExcerise_4()' />
-                <label for="story_5"><b>In social situations my worst attribute is (for example, being the listener)</b> </label>
-                <input type="text" id="story_5" value="" placeholder='' onchange='submitExcerise_4()' />
-                <label for="story_6"><b>Record any other stories your mind generates:</b> </label>
-                <input type="text" id="story_6" value="" placeholder=''onchange='submitExcerise_4()' />
-            </form>
+            <div id='exercise_4'></div>
             <script>
-                 if (localStorage['exercise_4']) {
-                    var exercise_4 = JSON.parse(localStorage['exercise_4']);
-                    for (var i = 1; i<=6; i++) {
-
-                        $('#story_'+i).val(exercise_4['story_'+i]);
-                    }
-                }
-                function submitExcerise_4() {
-                    var exercise_4 = {};
-                    for (var i = 1; i <= 6; i++) {
-                        exercise_4["story_"+i] = $("#story_"+i).val()
-                    }
-                    localStorage.setItem('exercise_4', JSON.stringify(exercise_4));                       
-                }
+                document.getElementById('exercise_4').innerHTML = exercise_4;
+                loadExercise_4();
             </script>
+            <div id='exercise_5'></div>
+            <script>
+                document.getElementById('exercise_5').innerHTML = exercise_5;
+                loadExercise_5();
+            </script
+          
 
-            <h2>Exercise 5: Types of Anxious Thinking</h2>
-            <p>
-                Now that we have covered the most common types of anxious thinking, look at your "Feared Social Situations" and "Anxious Thoughts" (from <b>Exercise 1</b> and <b>2</b>) and, in the "Types of Anxious Thinking" column, fill in as many types of thinking as you can identify for each of the anxious thoughts you recorded. 
-                See if you notice any trends. Does your mind tend to use the same type of thinking over and over, or does it prefer variety?
-            </p>
-
-             <form id='exercise_5'>
-                <table border="0">
-                    <tr>
-                        <td>
-                            <center><b>Feared Situation</b></center>
-                        </td>
-                        <td>
-                            <center><b>Anxious Thoughts</b></center>
-                        </td>
-                        <td>
-                            <center><b>Type</b></center>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            <input type='text' name='fear_1' id='fear_1' placeholder='1.' onchange='submitExcerise_5()'/>
-                        </td>
-                        <td>
-                            <input type='text' name='thought_1' onchange='submitExcerise_5()'/>
-                        </td>
-                        <td>
-                            <div data-role="fieldcontain">
-                                <select id="fear_type_1" data-native-menu="false" data-mini='true' onchange='submitExcerise_5()'>
-                                    <option value="none"></option>
-                                    <option value="fortune_telling">Fortune-Telling</option>
-                                    <option value="mind_reading">Mind Reading</option>
-                                    <option value="shoulding">"Shoulding"</option>
-                                    <option value="portmortem">Postmortem</option>
-                                    <option value="spotlight_effect">The Spotlight Effect</option>
-                                    <option value="generating_stories">Generating Stories</option>
-                                </select>
-                            </div>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            <input type='text' name='fear_2' placeholder='2.' onchange='submitExcerise_5()'/>
-                        </td>
-                        <td>
-                            <input type='text' name='thought_2' onchange='submitExcerise_5()'/>
-                        </td>
-                        <td>
-                            <div data-role="fieldcontain">
-                                <select id="fear_type_2" data-native-menu="false" data-mini='true' onchange='submitExcerise_5()'>
-                                    <option value="none"></option>
-                                    <option value="fortune_telling">Fortune-Telling</option>
-                                    <option value="mind_reading">Mind Reading</option>
-                                    <option value="shoulding">"Shoulding"</option>
-                                    <option value="portmortem">Postmortem</option>
-                                    <option value="spotlight_effect">The Spotlight Effect</option>
-                                    <option value="generating_stories">Generating Stories</option>
-                                </select>
-                            </div>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            <input type='text' name='fear_3' placeholder='3.' onchange='submitExcerise_5()'/>
-                        </td>
-                        <td>
-                            <input type='text' name='thought_3' onchange='submitExcerise_5()'/>
-                        </td>
-                        <td>
-                            <div data-role="fieldcontain">
-                                <select id="fear_type_3" data-native-menu="false" data-mini='true' onchange='submitExcerise_5()'>
-                                    <option value="none"></option>
-                                    <option value="fortune_telling">Fortune-Telling</option>
-                                    <option value="mind_reading">Mind Reading</option>
-                                    <option value="shoulding">"Shoulding"</option>
-                                    <option value="portmortem">Postmortem</option>
-                                    <option value="spotlight_effect">The Spotlight Effect</option>
-                                    <option value="generating_stories">Generating Stories</option>
-                                </select>
-                            </div>
-                        </td>
-                    </tr>
-                </table>
-            </form>
-
-             <script>
-                if (localStorage['exercise_1']) {
-                    console.log('st');
-                    var exercise_1 = JSON.parse(localStorage['exercise_1']);
-                    document.forms["exercise_5"]["fear_1"].value = exercise_1['fear_1'];
-                    document.forms["exercise_5"]["fear_2"].value = exercise_1['fear_2'];
-                    document.forms["exercise_5"]["fear_3"].value = exercise_1['fear_3'];
-                }
-                if (localStorage['exercise_2']) {
-                    var exercise_2 = JSON.parse(localStorage['exercise_2']);
-                    document.forms["exercise_5"]["thought_1"].value = exercise_2['thought_1'];
-                    document.forms["exercise_5"]["thought_2"].value = exercise_2['thought_2'];
-                    document.forms["exercise_5"]["thought_3"].value = exercise_2['thought_3'];
-                }
-                if (localStorage['exercise_5']) {
-                    var exercise_5 = JSON.parse(localStorage['exercise_5']);
-
-                    $("#fear_type_1").val(exercise_5['fear_type_1']).attr('selected', true)
-                    $("#fear_type_2").val(exercise_5['fear_type_2']).attr('selected', true)
-                    $("#fear_type_3").val(exercise_5['fear_type_3']).attr('selected', true)
-                }
-               
-                function submitExcerise_5() {
-                    var exercise_1 = {};
-                    for (var i = 1; i <= 3; i++) {
-                        if (document.forms["exercise_5"]["fear_"+i].value.length>0) {
-                            exercise_1["fear_"+i] = document.forms["exercise_5"]["fear_"+i].value;
-                        } else {
-                            exercise_1["fear_"+i] = "";
-                        }
-                    }
-                    localStorage.setItem('exercise_1', JSON.stringify(exercise_1));
-                    var exercise_2 = {};
-                    for (var i = 1; i <= 3; i++) {
-                        if (document.forms["exercise_5"]["thought_"+i].value.length>0) {
-                            exercise_2["thought_"+i] = document.forms["exercise_5"]["thought_"+i].value;
-                        } else {
-                            exercise_2["thought_"+i] = "";
-                        }
-                    }
-                    localStorage.setItem('exercise_2', JSON.stringify(exercise_2));
-
-                    var exercise_5 = {};
-                    for (var i = 1; i <= 3; i++) {
-                        console.log($("select#fear_type_"+i).val())
-                        exercise_5['fear_type_'+i] = $("#fear_type_"+i).val();
-                    }
-                    localStorage.setItem('exercise_5', JSON.stringify(exercise_5));
-
-                }
-            </script>
+             
 
 
         </div>

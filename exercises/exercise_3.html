@@ -15,41 +15,10 @@
         <!-- /header -->
 
         <div data-role="content">
-            <p>
-                Using statements that include the word "should," is a popular activity of the socially anxious mind. Do any of the following "should" phrases sound familiar?
-            </p>
-            <div data-role="fieldcontain">
-                <fieldset data-role="controlgroup">
-                    <input type="checkbox" id="should_1" onchange='submitExcerise_should()'/>
-                    <label for="should_1">I shouldn't appear anxious.</label>
-                    <input type="checkbox" id="should_2" onchange='submitExcerise_should()'/>
-                    <label for="should_2">I should be perfect.</label>
-                    <input type="checkbox" id="should_3" onchange='submitExcerise_should()'/>
-                    <label for="should_3">I shouldn't inconvenience others.</label>
-                    <input type="checkbox" id="should_4" onchange='submitExcerise_should()'/>
-                    <label for="should_4">I should always be in control. </label>
-                    <input type="checkbox" id="should_5" onchange='submitExcerise_should()'/>
-                    <label for="should_5">I should always be funny and charming.</label>
-                </fieldset>
-            </div>
-
+            <div id='exercise_3'></div>
             <script>
-                if (localStorage['exercise_should']) {
-                        var exercise_should = JSON.parse(localStorage['exercise_should']);
-                        for (var i = 1; i<=5; i++) {
-                            if (exercise_should['should_'+i]) {
-                                $('#should_'+i).attr("checked",true)
-                            }
-                        }
-                }
-                function submitExcerise_should() {
-                    var exercise_should = {};
-                    for (var i = 1; i <= 6; i++) {
-                        exercise_should["should_"+i] = $("#should_"+i).prop("checked");
-                    }
-                    localStorage.setItem('exercise_should', JSON.stringify(exercise_should));
-
-                }
+                document.getElementById('exercise_3').innerHTML = exercise_3;
+                loadExercise_3();
             </script>
         </div>
         <!-- /content -->

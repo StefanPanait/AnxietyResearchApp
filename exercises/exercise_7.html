@@ -14,122 +14,12 @@
         <!-- /header -->
 
         <div data-role="content">
-
-            <form name="exercise_7" id='exercise_7'>
-                <table border="0" cellpadding='0' id='table_exercise_7'>
-                    <tr>
-                        <td>
-                            <center><b>Thought</b>
-                            </center>
-                        </td>
-                        <td>
-                            <center><b>Defusion Strategy</b>
-                            </center>
-                        </td>
-                        <td>
-                            <center><b>What Did You Notice?</b>
-                            </center>
-                        </td>
-                        <td>
-                        </td>
-                    </tr>
-                    <tr id='exercise_7_row_1'>
-                        <td>
-                            <input type='text' class='exercise_7_thought' onchange='submitExcerise_7()' />
-                        </td>
-                        <td>
-                            <div data-role="fieldcontain">
-                                <select id='exercise_7_strategy_1' class="exercise_7_strategy" data-native-menu="false" data-mini='true' onchange='submitExcerise_7()'>
-                                    <option value="none"></option>
-                                    <option value="Fortune-Telling">Fortune-Telling</option>
-                                    <option value="Mind Reading">Mind Reading</option>
-                                    <option value="Shoulding">"Shoulding"</option>
-                                    <option value="Postmortem">Postmortem</option>
-                                    <option value="The Spotlight Effect">The Spotlight Effect</option>
-                                    <option value="Generating Stories">Generating Stories</option>
-                                </select>
-                            </div>
-                        </td>
-                        <td>
-                            <input type='text' class='exercise_7_notice' onchange='submitExcerise_7()' />
-                        </td>
-                        <td>
-                        </td>
-                    </tr>
-                </table>
-            </form>
-            <a href="#" id='2' onclick='exercise_7_add_row();' data-role="button">Add Entry</a>
+            <div id='exercise_7'></div>
             <script>
-                if (localStorage['exercise_7']) {
-                    var exercise_7 = JSON.parse(localStorage['exercise_7']);
-
-                    for (var i = 1; i <= exercise_7['rows']; i++) {
-                        if (i === 1) {
-                            var thoughts = document.getElementsByClassName('exercise_7_thought');
-                            var notices = document.getElementsByClassName('exercise_7_notice');
-
-                            thoughts[i - 1].value = exercise_7['exercise_7_thought_' + i];
-                            notices[i - 1].value = exercise_7['exercise_7_notice_' + i];
-                        } else {
-                            exercise_7_add_row(exercise_7['exercise_7_thought_' + i], exercise_7['exercise_7_notice_' + i], true);
-                        }
-                        $("#exercise_7_strategy_" + i).val(exercise_7['exercise_7_strategy_' + i]).attr('selected', true)
-                    }
-                }
-
-                function submitExcerise_7() {
-                    var exercise_7 = {};
-                    var table = document.getElementById("table_exercise_7");
-
-                    exercise_7['rows'] = table.rows.length - 1; //exclude header
-
-                    var strategies = document.getElementsByClassName('exercise_7_strategy');
-                    var thoughts = document.getElementsByClassName('exercise_7_thought');
-                    var notices = document.getElementsByClassName('exercise_7_notice');
-
-                    for (var i = 1; i < table.rows.length; i++) {
-
-                        exercise_7['exercise_7_thought_' + i] = thoughts[i - 1].value
-                        var id = strategies[i + i - 1].id; //i'm not proud of myself
-                        exercise_7['exercise_7_strategy_' + i] = $("#" + id).val();
-                        exercise_7['exercise_7_notice_' + i] = notices[i - 1].value
-                    }
-                    localStorage.setItem('exercise_7', JSON.stringify(exercise_7));
-                }
-
-                function exercise_7_remove_row(id) {
-                    var table = document.getElementById("table_exercise_7");
-                    var rowIndex = document.getElementById("exercise_7_row_" + id).rowIndex;
-                    table.deleteRow(rowIndex);
-                    submitExcerise_7();
-                }
-
-                function exercise_7_add_row(thought, notice, pageload) {
-                    if (!thought) {
-                        thought = ""
-                    }
-                    if (!notice) {
-                        notice = ""
-                    }
-                    var table = document.getElementById("table_exercise_7");
-                    var row_number = table.rows.length;
-
-                    var row = table.insertRow(-1);
-                    row.id = "exercise_7_row_" + row_number;
-
-                    var cell1 = row.insertCell(0);
-                    var cell2 = row.insertCell(1);
-                    var cell3 = row.insertCell(2);
-                    var cell4 = row.insertCell(3);
-
-                    cell1.innerHTML = "<input type='text' class='exercise_7_thought' onchange='submitExcerise_7();' id='exercise_7_thought_" + row_number + "' value='" + thought + "'/>";
-                    cell2.innerHTML = "<div data-role='fieldcontain'><select class='exercise_7_strategy' onchange='submitExcerise_7();' data-mini='true' id='exercise_7_strategy_" + row_number + "'  data-native-menu='false'><option value='none'></option><option value='Fortune-Telling'>Fortune-Telling</option><option value='Mind Reading'>Mind Reading</option><option value='Shoulding'>'Shoulding'</option><option value='Postmortem'>Postmortem</option><option value='The Spotlight Effect'>The Spotlight Effect</option><option value='Generating Stories'>Generating Stories</option></select></div>";
-                    cell3.innerHTML = "<input type='text' class='exercise_7_notice' onchange='submitExcerise_7();' name='exercise_7_notice_1' value='" + notice + "' />";
-                    cell4.innerHTML = "<a href='#' id='exercise_7_remove_" + row_number + "' onclick='exercise_7_remove_row(" + row_number + ");' data-role='button' data-icon='delete' data-iconpos='notext' data-mini='true' data-inline='true'>Delete</a>";
-
-                    $('#page').trigger("pagecreate");
-                }
+                document.getElementById('exercise_7').innerHTML = exercise_7;
+                loadExercise_7();
             </script>
+           
         </div>
         <!-- /content -->
 
