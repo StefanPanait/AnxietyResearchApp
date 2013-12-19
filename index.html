@@ -17,18 +17,14 @@
 </head>
 
 <body>
-
-
+    <div style='position:absolute;top: 0;width:100%;' data-role="header">
+        <h1> Relieving Anxiety Through Diffusion </h1>
+    </div>
 
     <div class='test'>
+    </div>
 
-        <div data-role="header">
-            <h1> Relieving Anxiety Through Diffusion </h1>
-        </div>
-
-
-
-        <div data-role="popup" id="popupContent" data-theme="a">
+     <div data-role="popup" id="popupContent" data-theme="a">
             <a href="#" data-rel="back" data-role="button" data-theme="a" data-icon="delete" data-iconpos="notext" class="ui-btn-right">Close</a>
             <ul data-role="listview" data-inset="true" style="min-width:210px;" data-theme="a">
                 <li data-role="divider" data-theme="a">Content</li>
@@ -64,64 +60,36 @@
                     </a>
                 </li>
             </ul>
-
-
-
-
-
         </div>
 
-        <div style='margin: 10px 20px;' data-role="collapsible" data-iconpos="right" data-collapsed-icon="arrow-r" data-theme="a" data-content-theme="a">
-            <h3>Exercises</h3>
-            <a href="exercises/exercise_1.html">
-                <p>Exercise 1: Top Feared Social Situations</p>
-            </a>
-            <a href="exercises/exercise_2.html">
-                <p>Exercise 2: Your Anxious Thoughts</p>
-            </a>
-            <a href="exercises/exercise_3.html">
-                <p>Exercise 3: "Shoulding"</p>
-            </a>
-            <a href="exercises/exercise_4.html">
-                <p>Exercise 4: Generating Stories</p>
-            </a>
-            <a href="exercises/exercise_5.html">
-                <p>Exercise 5: Types of Anxious Thinking</p>
-            </a>
-            <a href="exercises/exercise_6.html">
-                <p>Exercise 6: Awareness of Thinking</p>
-            </a>
-            <a href="exercises/exercise_7.html">
-                <p>Exercise 7: Defusing from Your Anxious Thoughts</p>
-            </a>
-        </div>
-
-        <script>
-            function clear_Storage() {
-                localStorage.clear();
-                alert("Storage cleared");
-            }
-            $('.test').height($(window).height());
-        </script>
-        <a href="#" onclick="clear_Storage();" data-role="button">Clear Storage</a>
-
-        <div style='position:relative;bottom: -10%;'>
-            <a href="#popupContent" data-rel="popup" data-position-to="window" data-role="button" data-theme="a" data-content-theme="a">Content</a>
-        </div>
-        <div data-role="footer" data-position="fixed">
-            <div data-role="navbar" data-iconpos="right">
-                <p>
-                    <meter value="8" min="0" max="10" style="width:100%;height:2em">75%</meter>
-                    Completion: 70%
-                </p>
-            </div>
-            <!-- /navbar -->
-        </div>
-        <!-- /footer -->
-
+    <div style='position:absolute;bottom: +10%;width:100%;'>
+        <a href="#popupContent" data-rel="popup" data-position-to="window" data-role="button" data-theme="a" data-content-theme="a">Content</a>
     </div>
 
+    <div style='position:absolute;bottom: 0;width:100%;background-color: black;'>
+        <div data-role="navbar" data-iconpos="right">
+            <p>
+                <meter value="8" min="0" max="10" style="width:100%;height:2em">75%</meter>
+                Completion: 70%
+            </p>
+        </div>
+        <!-- /navbar -->
+    </div>
+    <!-- /footer -->
 
+    <script>
+        function clear_Storage() {
+            localStorage.clear();
+            alert("Storage cleared");
+        }
+
+        function getRealContentHeight() {
+            var viewport_height = $(window).height();
+            var content_height = viewport_height;
+            return content_height;
+        }
+        $('.test').height(getRealContentHeight());
+    </script>
 </body>
 
 </html>
