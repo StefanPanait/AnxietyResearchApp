@@ -23,31 +23,52 @@
     <div class='test'>
 
         <div data-role="header">
-            <h1> BIG TITLE STUFF </h1>
+            <h1> Relieving Anxiety Through Diffusion </h1>
         </div>
 
-        <br>
-        <br>
-        <div style='margin: 0px 20px;' data-role="collapsible" data-iconpos="right" data-collapsed-icon="arrow-r" data-theme="a" data-content-theme="a">
-            <h3>Content</h3>
-            <a href="sections/section_1.html">
-                <p>Defining Shyness and Social Anxiety</p>
-            </a>
-            <a href="sections/section_2.html">
-                <p>Types of Anxious Thinking</p>
-            </a>
-            <a href="sections/section_3.html">
-                <p>Defusing from Your Social-Anxiety Thoughts</p>
-            </a>
-            <a href="sections/section_4.html">
-                <p>Developing Awareness of Thinking</p>
-            </a>
-            <a href="sections/section_5.html">
-                <p>Summary of Defusion Strategies</p>
-            </a>
-            <a href="sections/section_6.html">
-                <p>Conclusion</p>
-            </a>
+
+
+        <div data-role="popup" id="popupContent" data-theme="a">
+            <a href="#" data-rel="back" data-role="button" data-theme="a" data-icon="delete" data-iconpos="notext" class="ui-btn-right">Close</a>
+            <ul data-role="listview" data-inset="true" style="min-width:210px;" data-theme="a">
+                <li data-role="divider" data-theme="a">Content</li>
+                <li>
+                    <a href="sections/section_1.html">
+                        <p>Defining Shyness and Social Anxiety</p>
+                    </a>
+                </li>
+                <li>
+                    <a href="sections/section_2.html">
+                        <p>Types of Anxious Thinking</p>
+                    </a>
+                </li>
+                <li>
+                    <a href="sections/section_3.html">
+                        <p>Defusing from Your Social-Anxiety Thoughts</p>
+                    </a>
+                </li>
+                <li>
+                    <a href="sections/section_4.html">
+                        <p>Developing Awareness of Thinking</p>
+                    </a>
+                </li>
+                <li>
+                    <a href="sections/section_5.html">
+                        <p>Summary of Defusion Strategies</p>
+                    </a>
+                </li>
+                <li>
+
+                    <a href="sections/section_6.html">
+                        <p>Conclusion</p>
+                    </a>
+                </li>
+            </ul>
+
+
+
+
+
         </div>
 
         <div style='margin: 10px 20px;' data-role="collapsible" data-iconpos="right" data-collapsed-icon="arrow-r" data-theme="a" data-content-theme="a">
@@ -83,7 +104,11 @@
             $('.test').height($(window).height());
         </script>
         <a href="#" onclick="clear_Storage();" data-role="button">Clear Storage</a>
-         <div data-role="footer" data-position="fixed">
+
+        <div style='position:relative;bottom: -10%;'>
+            <a href="#popupContent" data-rel="popup" data-position-to="window" data-role="button" data-theme="a" data-content-theme="a">Content</a>
+        </div>
+        <div data-role="footer" data-position="fixed">
             <div data-role="navbar" data-iconpos="right">
                 <p>
                     <meter value="8" min="0" max="10" style="width:100%;height:2em">75%</meter>
