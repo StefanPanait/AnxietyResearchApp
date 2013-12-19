@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="style.css" />
     <script src="lib/jquery-2.0.3.min.js"></script>
     <script>
-        $(document).bind("mobileinit", function(){
+        $(document).bind("mobileinit", function () {
             $.mobile.defaultPageTransition = 'none';
         });
     </script>
@@ -20,46 +20,73 @@
 
 
 
-            <div class='test'>
+    <div class='test'>
 
-                        <div data-role="header">
-            <h1>Top 3 Feared Social Situations</h>
+        <div data-role="header">
+            <h1> BIG TITLE STUFF </h1>
         </div>
 
-                <br>
-                <br>
-                <div style='margin: 0px 20px;' data-role="collapsible" data-iconpos="right" data-collapsed-icon="arrow-r" data-theme="a" data-content-theme="a">
-                    <h3>Content</h3>
-                    <a href="sections/section_1.html"><p>Defining Shyness and Social Anxiety</p></a>
-                    <a href="sections/section_2.html"><p>Types of Anxious Thinking</p></a>
-                    <a href="sections/section_3.html"><p>Defusing from Your Social-Anxiety Thoughts</p></a>
-                    <a href="sections/section_4.html"><p>Developing Awareness of Thinking</p></a>
-                    <a href="sections/section_5.html"><p>Summary of Defusion Strategies</p></a>
-                    <a href="sections/section_6.html"><p>Conclusion</p></a>
-                </div>
-
-                <div style='margin: 10px 20px;' data-role="collapsible" data-iconpos="right" data-collapsed-icon="arrow-r" data-theme="a" data-content-theme="a">
-                    <h3>Exercises</h3>
-                        <a href="exercises/exercise_1.html"><p>Exercise 1: Top Feared Social Situations</p></a>
-                        <a href="exercises/exercise_2.html"><p>Exercise 2: Your Anxious Thoughts</p></a>
-                        <a href="exercises/exercise_3.html"><p>Exercise 3: "Shoulding"</p></a>
-                        <a href="exercises/exercise_4.html"><p>Exercise 4: Generating Stories</p></a>
-                        <a href="exercises/exercise_5.html"><p>Exercise 5: Types of Anxious Thinking</p></a>
-                        <a href="exercises/exercise_6.html"><p>Exercise 6: Awareness of Thinking</p></a>
-                        <a href="exercises/exercise_7.html"><p>Exercise 7: Defusing from Your Anxious Thoughts</p></a>
-                </div>
-
-                <script> 
-                    function clear_Storage() {
-                        localStorage.clear();
-                        alert("Storage cleared");
-                    }
-                    $('.test').height($(window).height());
-                </script>
-                <a href="#" onclick="clear_Storage();" data-role="button">Clear Storage</a>
-                <p> <meter value="8" min="0" max="10" style="width:10em;height:2em">75%</meter> 
-                70%</p>
+        <br>
+        <br>
+        <div style='margin: 0px 20px;' data-role="collapsible" data-iconpos="right" data-collapsed-icon="arrow-r" data-theme="a" data-content-theme="a">
+            <h3>Content</h3>
+            <a href="sections/section_1.html">
+                <p>Defining Shyness and Social Anxiety</p>
+            </a>
+            <a href="sections/section_2.html">
+                <p>Types of Anxious Thinking</p>
+            </a>
+            <a href="sections/section_3.html">
+                <p>Defusing from Your Social-Anxiety Thoughts</p>
+            </a>
+            <a href="sections/section_4.html">
+                <p>Developing Awareness of Thinking</p>
+            </a>
+            <a href="sections/section_5.html">
+                <p>Summary of Defusion Strategies</p>
+            </a>
+            <a href="sections/section_6.html">
+                <p>Conclusion</p>
+            </a>
         </div>
+
+        <div style='margin: 10px 20px;' data-role="collapsible" data-iconpos="right" data-collapsed-icon="arrow-r" data-theme="a" data-content-theme="a">
+            <h3>Exercises</h3>
+            <a href="exercises/exercise_1.html">
+                <p>Exercise 1: Top Feared Social Situations</p>
+            </a>
+            <a href="exercises/exercise_2.html">
+                <p>Exercise 2: Your Anxious Thoughts</p>
+            </a>
+            <a href="exercises/exercise_3.html">
+                <p>Exercise 3: "Shoulding"</p>
+            </a>
+            <a href="exercises/exercise_4.html">
+                <p>Exercise 4: Generating Stories</p>
+            </a>
+            <a href="exercises/exercise_5.html">
+                <p>Exercise 5: Types of Anxious Thinking</p>
+            </a>
+            <a href="exercises/exercise_6.html">
+                <p>Exercise 6: Awareness of Thinking</p>
+            </a>
+            <a href="exercises/exercise_7.html">
+                <p>Exercise 7: Defusing from Your Anxious Thoughts</p>
+            </a>
+        </div>
+
+        <script>
+            function clear_Storage() {
+                localStorage.clear();
+                alert("Storage cleared");
+            }
+            $('.test').height($(window).height());
+        </script>
+        <a href="#" onclick="clear_Storage();" data-role="button">Clear Storage</a>
+        <p>
+            <meter value="8" min="0" max="10" style="width:10em;height:2em">75%</meter>
+            70%</p>
+    </div>
 
 </body>
 
