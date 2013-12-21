@@ -17,6 +17,8 @@
     </author>
 
     <icon src="icon.png" />
+    
+    <gap:plugin name="com.phonegap.plugins.barcodescanner" />
 
 
 
