@@ -24,59 +24,109 @@
     <div class='test'>
     </div>
 
-     <div data-role="popup" id="popupContent" data-theme="a">
-            <a href="#" data-rel="back" data-role="button" data-theme="a" data-icon="delete" data-iconpos="notext" class="ui-btn-right">Close</a>
-            <ul data-role="listview" data-inset="true" style="min-width:210px;" data-theme="a">
-                <li data-role="divider" data-theme="a">Content</li>
-                <li>
-                    <a href="sections/section_1.html">
-                        <p>Defining Shyness and Social Anxiety</p>
-                    </a>
-                </li>
-                <li>
-                    <a href="sections/section_2.html">
-                        <p>Types of Anxious Thinking</p>
-                    </a>
-                </li>
-                <li>
-                    <a href="sections/section_3.html">
-                        <p>Defusing from Your Social-Anxiety Thoughts</p>
-                    </a>
-                </li>
-                <li>
-                    <a href="sections/section_4.html">
-                        <p>Developing Awareness of Thinking</p>
-                    </a>
-                </li>
-                <li>
-                    <a href="sections/section_5.html">
-                        <p>Summary of Defusion Strategies</p>
-                    </a>
-                </li>
-                <li>
+    <div data-role="popup" id="popupExercises" data-theme="a">
+        <a href="#" data-rel="back" data-role="button" data-theme="a" data-icon="delete" data-iconpos="notext" class="ui-btn-right">Close</a>
+            <a href="#" onclick="clear_Storage();" data-role="button">Clear Storage</a>
+        <ul data-role="listview" data-inset="true" style="min-width:210px;" data-theme="a">
+            <li data-role="divider" data-theme="a">Exercises</li>
+            <li>
+                <a href="exercises/exercise_1.html">
+                    <p>Exercise 1: Top Feared Social Situations</p>
+                </a>
+            </li>
+            <li>
+                <a href="exercises/exercise_2.html">
+                    <p>Exercise 2: Your Anxious Thoughts</p>
+                </a>
+            </li>
+            <li>
+                <a href="exercises/exercise_3.html">
+                    <p>Exercise 3: "Shoulding"</p>
+                </a>
+            </li>
+            <li>
+                <a href="exercises/exercise_4.html">
+                    <p>Exercise 4: Generating Stories</p>
+                </a>
+            </li>
+            <li>
+                <a href="exercises/exercise_5.html">
+                    <p>Exercise 5: Types of Anxious Thinking</p>
+                </a>
+            </li>
+            <li>
+                <a href="exercises/exercise_6.html">
+                    <p>Exercise 6: Awareness of Thinking</p>
+                </a>
+            </li>
+            <li>
+                <a href="exercises/exercise_7.html">
+                    <p>Exercise 7: Defusing from Your Anxious Thoughts</p>
+                </a>
+            </li>
+    </div>
 
-                    <a href="sections/section_6.html">
-                        <p>Conclusion</p>
-                    </a>
-                </li>
-            </ul>
-        </div>
 
-    <div style='position:absolute;bottom: +15%;width:100%;'>
-        <center>
-        <a href="#popupContent" data-rel="popup" data-position-to="window" data-inline='true' data-role="button" data-theme="a" data-content-theme="a">Content</a>
-    </center>
+    <div data-role="popup" id="popupContent" data-theme="a">
+        <a href="#" data-rel="back" data-role="button" data-theme="a" data-icon="delete" data-iconpos="notext" class="ui-btn-right">Close</a>
+        <ul data-role="listview" data-inset="true" style="min-width:210px;" data-theme="a">
+            <li data-role="divider" data-theme="a">Content</li>
+            <li>
+                <a href="sections/section_1.html">
+                    <p>Defining Shyness and Social Anxiety</p>
+                </a>
+            </li>
+            <li>
+                <a href="sections/section_2.html">
+                    <p>Types of Anxious Thinking</p>
+                </a>
+            </li>
+            <li>
+                <a href="sections/section_3.html">
+                    <p>Defusing from Your Social-Anxiety Thoughts</p>
+                </a>
+            </li>
+            <li>
+                <a href="sections/section_4.html">
+                    <p>Developing Awareness of Thinking</p>
+                </a>
+            </li>
+            <li>
+                <a href="sections/section_5.html">
+                    <p>Summary of Defusion Strategies</p>
+                </a>
+            </li>
+            <li>
+
+                <a href="sections/section_6.html">
+                    <p>Conclusion</p>
+                </a>
+            </li>
+        </ul>
     </div>
 
     <div data-role="header" style='position:absolute;bottom: 0;width:100%;'>
-        <h1>
-            <meter value="7" min="0" max="10" style="width:100%;height:2em;margin:0px 0px 0px 0px;">75%</meter>
-            </h1>
+        <div data-role="navbar">
+            <ul>
+                <li>
+                    <a href="#popupContent" data-rel="popup" data-position-to="window" data-inline='true' data-role="button" data-theme="a" data-content-theme="a">Content</a>
+                </li>
+                <li>
+                    <a href="#popupProgress" data-rel="popup" data-position-to="window" data-inline='true' data-role="button" data-theme="a" data-content-theme="a">progress</a>
+                </li>
+                <li>
+                    <a href="#popupExercises" data-rel="popup" data-position-to="window" data-inline='true' data-role="button" data-theme="a" data-content-theme="a">Exercises</a>
+                </li>
+            </ul>
+        </div><!-- /navbar -->
     </div>
     <!-- /footer -->
 
-    <div style='position:absolute;bottom: +.2%;left: +5%;width:100%;'>
-    <p style='color: black;'>Completion: 70%</p>
+    <div data-role="popup" id="popupProgress" data-theme="a">
+        <a href="#" data-rel="back" data-role="button" data-theme="a" data-icon="delete" data-iconpos="notext" class="ui-btn-right">Close</a>
+        <p style='color: black;'>Completion: 70%</p>
+        <meter value="7" min="0" max="10" style="width:100%;height:2em;margin:0px 0px 0px 0px;">75%</meter>
+
 
     </div>
 
