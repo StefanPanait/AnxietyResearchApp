@@ -109,22 +109,33 @@
         <div data-role="navbar">
             <ul>
                 <li>
-                    <a href="#popupContent" data-rel="popup" data-position-to="window" data-inline='true' data-role="button" data-theme="a" data-content-theme="a">Content</a>
+                    <a href="#popupContent" data-rel="popup" data-position-to="window">Content</a>
                 </li>
                 <li>
-                    <a href="#popupProgress" data-rel="popup" data-position-to="window" data-inline='true' data-role="button" data-theme="a" data-content-theme="a">Progress</a>
+                    <a href="#popupProgress" data-rel="popup" data-position-to="window">Progress</a>
                 </li>
                 <li>
                     <a href="#popupExercises" data-rel="popup" data-position-to="window">Exercises</a>
+                </li>
+                <li>
+                    <a href="#" onlick='notifiy()'>Local Notification</a>
                 </li>
             </ul>
         </div><!-- /navbar -->
     </div>
     <!-- /footer -->
 
+    <script>
+    function notifiy() {
+        console.log('starting')
+        window.plugin.notification.local.add({ message: 'Great app!' });
+        console.log('ending')
+    }
+    </script>
+
     <div data-role="popup" id="popupProgress" data-theme="a">
         <a href="#" data-rel="back" data-role="button" data-theme="a" data-icon="delete" data-iconpos="notext" class="ui-btn-right">Close</a>
-        <p style='color: black;'>Completion: 70%</p>
+        <p>Progress Completed: 70%</p>
         <meter value="7" min="0" max="10" style="width:100%;height:2em;margin:0px 0px 0px 0px;">75%</meter>
 
 
