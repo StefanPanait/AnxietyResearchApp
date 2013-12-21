@@ -12,11 +12,13 @@
             $.mobile.defaultPageTransition = 'none';
         });
     </script>
+
     <script src="lib/jquery.mobile-1.3.2.min.js"></script>
     <script src='js/exercises.js'></script>
 </head>
 
 <body>
+
     <div style='position:absolute;top: 0;width:100%;' data-role="header">
         <h1> Relieving Anxiety Through Diffusion </h1>
     </div>
@@ -118,20 +120,14 @@
                     <a href="#popupExercises" data-rel="popup" data-position-to="window">Exercises</a>
                 </li>
                 <li>
-                    <a href="#" onlick='notifiy()'>Local Notification</a>
+                    <a href="#" onlick='notifiy();'>Local Notification</a>
                 </li>
             </ul>
         </div><!-- /navbar -->
     </div>
     <!-- /footer -->
 
-    <script>
-    function notifiy() {
-        console.log('starting')
-        window.plugin.notification.local.add({ message: 'Great app!' });
-        console.log('ending')
-    }
-    </script>
+
 
     <div data-role="popup" id="popupProgress" data-theme="a">
         <a href="#" data-rel="back" data-role="button" data-theme="a" data-icon="delete" data-iconpos="notext" class="ui-btn-right">Close</a>
@@ -145,6 +141,9 @@
         function clear_Storage() {
             localStorage.clear();
             alert("Storage cleared");
+                        console.log('starting')
+            window.plugin.notification.local.add({ message: 'Great app!' });
+        console.log('ending')
         }
 
         function getRealContentHeight() {
