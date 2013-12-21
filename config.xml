@@ -6,7 +6,7 @@
 
     <!-- versionCode is optional and Android only -->
     <preference name="phonegap-version" value="3.0.0" />
-    
+
     <name>Anxiety Research Application</name>
 
     <description>
@@ -21,6 +21,7 @@
 
     <gap:plugin name="com.phonegap.plugins.barcodescanner" />
     <gap:plugin name="org.apache.cordova.device" />
+    <gap:plugin name="de.appplant.cordova.plugin.local-notification" />
 
 
 
