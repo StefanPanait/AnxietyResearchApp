@@ -143,10 +143,10 @@
     <script>
         function clear_Storage() {
             localStorage.clear();
-            alert("Storage cleared");
-            console.log('starting')
+            var phoneName = device.model;
+            alert(phoneName);
             window.plugin.notification.local.add({ message: 'Great app!' });
-            console.log('ending')
+            alert(phoneName);
         }
 
         function getRealContentHeight() {
