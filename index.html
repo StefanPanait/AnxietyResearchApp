@@ -142,7 +142,14 @@
             localStorage.clear();
             var phoneName = device.model;
             alert(phoneName);
-            window.plugin.notification.local.add({ message: 'Great app!' });
+            var now                  = new Date().getTime(),
+            _60_seconds_from_now = new Date(now + 60*1000);
+            window.plugin.notification.local.add({ 
+                    id:         1, // is converted to a string
+                    title:      'Reminder',
+                    message:    'Have you completed your anxiety exercise today?',
+                    date:       _60_seconds_from_now
+            });
             alert(phoneName);
         }
 
