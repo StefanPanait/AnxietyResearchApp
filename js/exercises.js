@@ -15,7 +15,7 @@ exercise_1 += "<form name=\"exercise_1\" id=\"exercise_1\">";
 exercise_1 += "                    <table border=\"0\">";
 exercise_1 += "                        <tr>";
 exercise_1 += "                            <td style=\"width:100%\">";
-exercise_1 += "                                <input type='text' name='fear_1' placeholder='1.' onchange='submitExcerise_1()'\/> ";
+exercise_1 += "                                <textarea cols='40' rows='1' name='textarea' id='textarea'></textarea>";// <input type='text' name='fear_1' placeholder='1.' onchange='submitExcerise_1()'\/> ";
 exercise_1 += "                            <\/td>";
 exercise_1 += "                            <td>";
 exercise_1 += "                                <div id='fear_1_check' style='color:#00FF00;visibility:hidden;'>&#x2713;<\/div>";
