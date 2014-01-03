@@ -155,7 +155,7 @@ function submitExcerise_2() {
 }
 
 var exercise_3="";
-exercise_3 += "            <h2>Exercise 3: \"Shoulding\"<\/h2>";
+exercise_3 += "            <h2>Exercise 3: \"Shoulding\"<\/h2><p>Please check any of the following \"should\" phrases that sound familiar to you.</p>";
 exercise_3 += "            <div data-role=\"fieldcontain\">";
 exercise_3 += "                <fieldset data-role=\"controlgroup\">";
 exercise_3 += "                    <input type=\"checkbox\" id=\"should_1\" onchange='submitExcerise_should()'\/>";
@@ -194,7 +194,7 @@ function submitExcerise_should() {
 var exercise_4="";
 exercise_4 += "<h2>Exercise 4: Generating Stories<\/h2>";
 exercise_4 += "            <p>";
-exercise_4 += "                To try to get at some of your stories, complete the following phrases:.";
+exercise_4 += "                To get at some of your stories, complete the following phrases:.";
 exercise_4 += "            <\/p>";
 exercise_4 += "            <form id='exercise_4'>";
 exercise_4 += "                <label for=\"story_1\"><b>In social situations I feel as if I am (for example, an imposter)<\/b> <\/label>";
@@ -231,8 +231,7 @@ function submitExcerise_4() {
 var exercise_5="";
 exercise_5 += "  <h2>Exercise 5: Types of Anxious Thinking<\/h2>";
 exercise_5 += "            <p>";
-exercise_5 += "                Now that we have covered the most common types of anxious thinking, look at your \"Feared Social Situations\" and \"Anxious Thoughts\" (from <b>Exercise 1<\/b> and <b>2<\/b>) and, in the \"Types of Anxious Thinking\" column, fill in as many types of thinking as you can identify for each of the anxious thoughts you recorded. ";
-exercise_5 += "                See if you notice any trends. Does your mind tend to use the same type of thinking over and over, or does it prefer variety?";
+exercise_5 += "                Looking at your \"Feared Social Situations\" and \"Anxious Thoughts\" (from <b>Exercise 1<\/b> and <b>2<\/b>) and, in the \"Types of Anxious Thinking\" column, select as many types of anxious thinking as you can identify for each of the anxious thoughts you recorded. ";
 exercise_5 += "            <\/p>";
 exercise_5 += "";
 exercise_5 += "             <form id='exercise_5'>";
@@ -313,10 +312,19 @@ exercise_5 += "                        <\/td>";
 exercise_5 += "                    <\/tr>";
 exercise_5 += "                <\/table>";
 exercise_5 += "            <\/form>";
+exercise_5 += "            <p>";
+exercise_5 += "                See if you notice any trends. Does your mind tend to use the same type of thinking over and over, or does it prefer variety?";
+exercise_5 += "            <\/p>";
+exercise_5 += "            <fieldset data-role=\"controlgroup\">";
+exercise_5 += "                <input type=\"radio\" name=\"radio-choice\" id=\"vary_1\" value=\"choice-1\" checked=\"checked\" onchange='submitExcerise_5()'\/>";
+exercise_5 += "                <label for=\"vary_1\">I typically use the same type of anxious thinking.<\/label>";
+exercise_5 += "                <input type=\"radio\" name=\"radio-choice\" id=\"vary_2\" value=\"choice-1\" onchange='submitExcerise_5()'\/>";
+exercise_5 += "                <label for=\"vary_2\">I typically vary.<\/label>";
+exercise_5 += "            <\/fieldset>";
+
 
 function loadExercise_5() {
     if (localStorage['exercise_1']) {
-        console.log('st');
         var exercise_1 = JSON.parse(localStorage['exercise_1']);
         document.forms["exercise_5"]["fear_1"].value = exercise_1['fear_1'];
         document.forms["exercise_5"]["fear_2"].value = exercise_1['fear_2'];
@@ -334,6 +342,11 @@ function loadExercise_5() {
         $("#fear_type_1").val(exercise_5['fear_type_1']).attr('selected', true)
         $("#fear_type_2").val(exercise_5['fear_type_2']).attr('selected', true)
         $("#fear_type_3").val(exercise_5['fear_type_3']).attr('selected', true)
+        for (var i = 1; i<=2; i++) {
+            if (exercise_5['vary_'+i]) {
+                $('#vary_'+i).attr("checked",true)
+            }
+        }  
     }
 }
    
@@ -359,12 +372,17 @@ function submitExcerise_5() {
 
     var exercise_5 = {};
     for (var i = 1; i <= 3; i++) {
-        console.log($("select#fear_type_"+i).val())
         exercise_5['fear_type_'+i] = $("#fear_type_"+i).val();
+    }
+
+
+    for (var i = 1; i <= 2; i++) {
+        exercise_5["vary_"+i] = $("#vary_"+i).prop("checked");
     }
     localStorage.setItem('exercise_5', JSON.stringify(exercise_5));
 
 }
+
 
 var exercise_7="";
 exercise_7 += " <h2> Exercise 6: Defusing from Your Anxious Thoughts <\/h2>";
@@ -508,7 +526,6 @@ function loadExercise_7() {
                 exercise_7_add_row(exercise_7['exercise_7_thought_'+i],exercise_7['exercise_7_notice_'+i],true);
             }
             $("#exercise_7_strategy_"+i).val(exercise_7['exercise_7_strategy_'+i]).attr('selected', true)
-            console.log(exercise_7['exercise_7_strategy_'+i])
         }
     }
 }
@@ -521,13 +538,6 @@ function submitExcerise_7() {
     var strategies = document.getElementsByClassName('exercise_7_strategy');
     var thoughts = document.getElementsByClassName('exercise_7_thought');
     var notices = document.getElementsByClassName('exercise_7_notice');
-    console.log("strats");
-    for (var i = 0; i<strategies.length; i++) {
-        
-        console.log(strategies[i].id)
-        
-    }
-    console.log('done')
     for (var i = 1; i<table.rows.length;i++){
 
         exercise_7['exercise_7_thought_'+i] = thoughts[i-1].value
