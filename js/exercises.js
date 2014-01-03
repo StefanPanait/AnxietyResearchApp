@@ -95,6 +95,9 @@ exercise_2 += "                        <\/td>";
 exercise_2 += "                        <td>";
 exercise_2 += "                            <textarea name='thought_1' onchange='submitExcerise_2()'\/></textarea>";
 exercise_2 += "                        <\/td>";
+exercise_2 += "                        <td>";
+exercise_2 += "                            <div id='e2_1_check' style='color:#00FF00;visibility:hidden;'>&#x2713;<\/div>";
+exercise_2 += "                        <\/td>";
 exercise_2 += "                    <\/tr>";
 exercise_2 += "                    <tr>";
 exercise_2 += "                        <td>";
@@ -103,6 +106,9 @@ exercise_2 += "                        <\/td>";
 exercise_2 += "                        <td>";
 exercise_2 += "                            <textarea name='thought_2' onchange='submitExcerise_2()'\/></textarea>";
 exercise_2 += "                        <\/td>";
+exercise_2 += "                        <td>";
+exercise_2 += "                            <div id='e2_2_check' style='color:#00FF00;visibility:hidden;'>&#x2713;<\/div>";
+exercise_2 += "                        <\/td>";
 exercise_2 += "                    <\/tr>";
 exercise_2 += "                    <tr>";
 exercise_2 += "                        <td>";
@@ -110,6 +116,9 @@ exercise_2 += "                            <textarea name='fear_3' placeholder='
 exercise_2 += "                        <\/td>";
 exercise_2 += "                        <td>";
 exercise_2 += "                            <textarea name='thought_3' onchange='submitExcerise_2()'\/></textarea>";
+exercise_2 += "                        <\/td>";
+exercise_2 += "                        <td>";
+exercise_2 += "                            <div id='e2_3_check' style='color:#00FF00;visibility:hidden;'>&#x2713;<\/div>";
 exercise_2 += "                        <\/td>";
 exercise_2 += "                    <\/tr>";
 exercise_2 += "                <\/table>";
@@ -126,9 +135,12 @@ function loadExercise_2(){
     }
     if (localStorage['exercise_2']) {
         var exercise_2 = JSON.parse(localStorage['exercise_2']);
-        document.forms["exercise_2"]["thought_1"].value = exercise_2['thought_1'];
-        document.forms["exercise_2"]["thought_2"].value = exercise_2['thought_2'];
-        document.forms["exercise_2"]["thought_3"].value = exercise_2['thought_3'];
+        for (var i = 1; i <= 3; i++) {
+            if (exercise_2['thought_'+i].length>0) {
+                document.forms["exercise_2"]["thought_"+i].value = exercise_2['thought_'+i];
+                $('#e2_'+i+'_check').css('visibility','visible');
+            }
+        }
     }
 }
  
@@ -138,6 +150,7 @@ function submitExcerise_2() {
         if (document.forms["exercise_2"]["fear_"+i].value.length>0) {
             exercise_1["fear_"+i] = document.forms["exercise_2"]["fear_"+i].value;
         } else {
+            console.log("empty");
             exercise_1["fear_"+i] = "";
         }
     }
@@ -146,8 +159,10 @@ function submitExcerise_2() {
     for (var i = 1; i <= 3; i++) {
         if (document.forms["exercise_2"]["thought_"+i].value.length>0) {
             exercise_2["thought_"+i] = document.forms["exercise_2"]["thought_"+i].value;
+            $('#e2_'+i+'_check').css('visibility','visible');
         } else {
             exercise_2["thought_"+i] = "";
+            $('#e2_'+i+'_check').css('visibility','hidden');
         }
     }
     localStorage.setItem('exercise_2', JSON.stringify(exercise_2));
@@ -197,33 +212,84 @@ exercise_4 += "            <p>";
 exercise_4 += "                To get at some of your stories, complete the following phrases:.";
 exercise_4 += "            <\/p>";
 exercise_4 += "            <form id='exercise_4'>";
-exercise_4 += "                <label for=\"story_1\"><b>In social situations I feel as if I am (for example, an imposter)<\/b> <\/label>";
-exercise_4 += "                <input type=\"text\" id=\"story_1\" value=\"\" placeholder='' onchange='submitExcerise_4()' \/>";
-exercise_4 += "                <label for=\"story_2\"><b>In social situations I am someone who always (for example, says the wrong thing)<\/b> <\/label>";
-exercise_4 += "                <input type=\"text\" id=\"story_2\" value=\"\" placeholder='' onchange='submitExcerise_4()' \/>";
-exercise_4 += "                <label for=\"story_3\"><b>In social situations I am someone who can't (for example, do small talk)<\/b> <\/label>";
-exercise_4 += "                <input type=\"text\" id=\"story_3\" value=\"\" placeholder='' onchange='submitExcerise_4()' \/>";
-exercise_4 += "                <label for=\"story_4\"><b>In social situations my best attribute is (for example, being the listener)<\/b> <\/label>";
-exercise_4 += "                <input type=\"text\" id=\"story_4\" value=\"\" placeholder='' onchange='submitExcerise_4()' \/>";
-exercise_4 += "                <label for=\"story_5\"><b>In social situations my worst attribute is (for example, being the listener)<\/b> <\/label>";
-exercise_4 += "                <input type=\"text\" id=\"story_5\" value=\"\" placeholder='' onchange='submitExcerise_4()' \/>";
-exercise_4 += "                <label for=\"story_6\"><b>Record any other stories your mind generates:<\/b> <\/label>";
-exercise_4 += "                <input type=\"text\" id=\"story_6\" value=\"\" placeholder=''onchange='submitExcerise_4()' \/>";
+exercise_4 += "                <table border=\"0\">";
+exercise_4 += "                    <tr>";
+exercise_4 += "                        <td>";
+exercise_4 += "                            <label for=\"story_1\"><b>In social situations I feel as if I am (for example, an imposter)<\/b> <\/label>";
+exercise_4 += "                            <textarea type=\"text\" id=\"story_1\" value=\"\" placeholder='' onchange='submitExcerise_4()' \/></textarea>";
+exercise_4 += "                        <\/td>";
+exercise_4 += "                        <td>";
+exercise_4 += "                            <div id='e4_1_check' style='color:#00FF00;visibility:hidden;'>&#x2713;<\/div>";
+exercise_4 += "                        <\/td>";
+exercise_4 += "                    <\/tr>";
+exercise_4 += "                    <tr>";
+exercise_4 += "                        <td>";
+exercise_4 += "                            <label for=\"story_2\"><b>In social situations I am someone who always (for example, says the wrong thing)<\/b> <\/label>";
+exercise_4 += "                            <textarea type=\"text\" id=\"story_2\" value=\"\" placeholder='' onchange='submitExcerise_4()' \/></textarea>";
+exercise_4 += "                        <\/td>";
+exercise_4 += "                        <td>";
+exercise_4 += "                            <div id='e4_2_check' style='color:#00FF00;visibility:hidden;'>&#x2713;<\/div>";
+exercise_4 += "                        <\/td>";
+exercise_4 += "                    <\/tr>";
+exercise_4 += "                    <tr>";
+exercise_4 += "                        <td>";
+exercise_4 += "                            <label for=\"story_3\"><b>In social situations I am someone who can't (for example, do small talk)<\/b> <\/label>";
+exercise_4 += "                            <textarea type=\"text\" id=\"story_3\" value=\"\" placeholder='' onchange='submitExcerise_4()' \/></textarea>";
+exercise_4 += "                        <\/td>";
+exercise_4 += "                        <td>";
+exercise_4 += "                            <div id='e4_3_check' style='color:#00FF00;visibility:hidden;'>&#x2713;<\/div>";
+exercise_4 += "                        <\/td>";
+exercise_4 += "                    <\/tr>";
+exercise_4 += "                    <tr>";
+exercise_4 += "                        <td>";
+exercise_4 += "                            <label for=\"story_4\"><b>In social situations my best attribute is (for example, being the listener)<\/b> <\/label>";
+exercise_4 += "                            <textarea type=\"text\" id=\"story_4\" value=\"\" placeholder='' onchange='submitExcerise_4()' \/></textarea>";
+exercise_4 += "                        <\/td>";
+exercise_4 += "                        <td>";
+exercise_4 += "                            <div id='e4_4_check' style='color:#00FF00;visibility:hidden;'>&#x2713;<\/div>";
+exercise_4 += "                        <\/td>";
+exercise_4 += "                    <\/tr>";
+exercise_4 += "                    <tr>";
+exercise_4 += "                        <td>";
+exercise_4 += "                            <label for=\"story_5\"><b>In social situations my worst attribute is (for example, being the listener)<\/b> <\/label>";
+exercise_4 += "                            <textarea type=\"text\" id=\"story_5\" value=\"\" placeholder='' onchange='submitExcerise_4()' \/></textarea>";
+exercise_4 += "                        <\/td>";
+exercise_4 += "                        <td>";
+exercise_4 += "                            <div id='e4_5_check' style='color:#00FF00;visibility:hidden;'>&#x2713;<\/div>";
+exercise_4 += "                        <\/td>";
+exercise_4 += "                    <\/tr>";
+exercise_4 += "                    <tr>";
+exercise_4 += "                        <td>";
+exercise_4 += "                            <label for=\"story_6\"><b>Record any other stories your mind generates:<\/b> <\/label>";
+exercise_4 += "                            <textarea type=\"text\" id=\"story_6\" value=\"\" placeholder='' onchange='submitExcerise_4()' \/></textarea>";
+exercise_4 += "                        <\/td>";
+exercise_4 += "                        <td>";
+exercise_4 += "                            <div id='e4_6_check' style='color:#00FF00;visibility:hidden;'>&#x2713;<\/div>";
+exercise_4 += "                        <\/td>";
+exercise_4 += "                    <\/tr>";
+exercise_4 += "                <\/table>";
 exercise_4 += "            <\/form>";
 
 function loadExercise_4() {
      if (localStorage['exercise_4']) {
         var exercise_4 = JSON.parse(localStorage['exercise_4']);
         for (var i = 1; i<=6; i++) {
-
-            $('#story_'+i).val(exercise_4['story_'+i]);
+            if (exercise_4['story_'+i]) {
+                $('#story_'+i).val(exercise_4['story_'+i]);
+                $('#e4_'+i+'_check').css('visibility','visible');
+            }           
         }
     }
 }
 function submitExcerise_4() {
     var exercise_4 = {};
     for (var i = 1; i <= 6; i++) {
-        exercise_4["story_"+i] = $("#story_"+i).val()
+        if ($("#story_"+i).val().length > 0) {
+            exercise_4["story_"+i] = $("#story_"+i).val();
+            $('#e4_'+i+'_check').css('visibility','visible');
+        } else {
+            $('#e4_'+i+'_check').css('visibility','hidden');
+        }
     }
     localStorage.setItem('exercise_4', JSON.stringify(exercise_4));                       
 }
