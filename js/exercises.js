@@ -11,7 +11,7 @@ exercise_1 += "                <br>";
 exercise_1 += "                <h4><li>Performing in Front of Others<\/li><\/h4> (e.g. speaking up in a class discussion, or giving a presentation; being interviewed for a job)";
 exercise_1 += "            <\/p>";
 exercise_1 += "                <center><h3>Top 3 Feared Social Situations<\/h3><\/center>";
-exercise_1 += "<form name=\"exercise_1\" id=\"exercise_1\">";
+exercise_1 += "<form name=\"exercise_1\" id=\"exercise_1\" onsubmit=\"alert(\"testing\");\" >";
 exercise_1 += "                    <table border=\"0\">";
 exercise_1 += "                        <tr>";
 exercise_1 += "                            <td style=\"width:100%\">";
