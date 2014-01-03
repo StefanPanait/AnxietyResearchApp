@@ -27,3 +27,43 @@ html, body {
     height: 100%;
     background-color: #333333;
 }
+
+.background_movietheater {
+    background-image: url(images/background_movietheater.png);
+    background-repeat:no-repeat;
+	background-size:100% 100%;
+	height:100%;
+	padding: 0px;
+	margin: 0 auto;
+
+}
+
+.background_waterfall {
+    background-image: url(images/background_waterfall.png);
+    background-repeat:no-repeat;
+	background-size:100% 100%;
+	height:100%;
+	padding: 0px;
+	margin: 0 auto;
+
+}
+
+.background_stream {
+    background-image: url(images/background_stream.png);
+    background-repeat:no-repeat;
+	background-size:100% 100%;
+	height:100%;
+	padding: 0px;
+	margin: 0 auto;
+
+}
+
+.background_sky {
+    background-image: url(images/background_sky.png);
+    background-repeat:no-repeat;
+	background-size:100% 100%;
+	height:100%;
+	padding: 0px;
+	margin: 0 auto;
+
+}

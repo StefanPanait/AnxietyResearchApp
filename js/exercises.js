@@ -385,17 +385,13 @@ function submitExcerise_5() {
 
 
 var exercise_7="";
-exercise_7 += " <h2> Exercise 6: Defusing from Your Anxious Thoughts <\/h2>";
+exercise_7 += " <h2> Exercise 7: Defusing from Your Anxious Thoughts <\/h2>";
 exercise_7 += "            <p>";
-exercise_7 += "                Over the next several days, try out all of the defusion strategies (summarized in the previous box).";
-exercise_7 += "                <br>";
-exercise_7 += "                <br>";
-exercise_7 += "                To get as much practice as possible, try defusing from everyday thoughts (for example, <i>I am having the thought that I want to eat a muffin for breakfast)<\/i> as well as social-anxiety thoughts. ";
+exercise_7 += "                To get as much practice as possible, you can try defusing from everyday thoughts (for example, <i>I am having the thought that I want to eat a muffin for breakfast)<\/i> as well as social-anxiety thoughts. ";
 exercise_7 += "                <br>";
 exercise_7 += "                <br>";
 exercise_7 += "                You can try some of the strategies right when you notice the thought (e.g, <a href=\"#definition_naming_the_mind\" data-rel=\"popup\"><b>naming what the mind is doing<\/b><\/a> or <a href=\"#definition_thanking_the_mind\" data-rel=\"popup\"><b>thanking the mind<\/b><\/a>); for others, you may want to wait until you have some time to yourself (e.g., <a href=\"#definition_ditching_the_meaning\" data-rel=\"popup\"><b>ditching the meaning of your thoughts<\/b><\/a> or <a href=\"#definition_awareness_of_thinking\" data-rel=\"popup\"><b>awareness of thinking<\/b><\/a>). ";
 exercise_7 += "            <\/p>";
-exercise_7 += "";
 exercise_7 += "            <form name=\"exercise_7\" id='exercise_7'>";
 exercise_7 += "                <table border=\"0\" cellpadding='0' id='table_exercise_7'>";
 exercise_7 += "                    <tr>";
