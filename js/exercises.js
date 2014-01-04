@@ -315,10 +315,10 @@ exercise_5 += "                        <\/td>";
 exercise_5 += "                    <\/tr>";
 exercise_5 += "                    <tr>";
 exercise_5 += "                        <td>";
-exercise_5 += "                            <input type='text' name='fear_1' id='fear_1' placeholder='1.' onchange='submitExcerise_5()'\/>";
+exercise_5 += "                            <textarea type='text' name='fear_1' id='fear_1' placeholder='1.' onchange='submitExcerise_5()'\/></textarea>";
 exercise_5 += "                        <\/td>";
 exercise_5 += "                        <td>";
-exercise_5 += "                            <input type='text' name='thought_1' onchange='submitExcerise_5()'\/>";
+exercise_5 += "                            <textarea type='text' name='thought_1' onchange='submitExcerise_5()'\/></textarea>";
 exercise_5 += "                        <\/td>";
 exercise_5 += "                        <td>";
 exercise_5 += "                            <div data-role=\"fieldcontain\">";
@@ -333,13 +333,16 @@ exercise_5 += "                                    <option value=\"generating_st
 exercise_5 += "                                <\/select>";
 exercise_5 += "                            <\/div>";
 exercise_5 += "                        <\/td>";
+exercise_5 += "                        <td>";
+exercise_5 += "                            <div id='e5_1_check' style='color:#00FF00;visibility:hidden;'>&#x2713;<\/div>";
+exercise_4 += "                        <\/td>";
 exercise_5 += "                    <\/tr>";
 exercise_5 += "                    <tr>";
 exercise_5 += "                        <td>";
-exercise_5 += "                            <input type='text' name='fear_2' placeholder='2.' onchange='submitExcerise_5()'\/>";
+exercise_5 += "                            <textarea type='text' name='fear_2' placeholder='2.' onchange='submitExcerise_5()'\/></textarea>";
 exercise_5 += "                        <\/td>";
 exercise_5 += "                        <td>";
-exercise_5 += "                            <input type='text' name='thought_2' onchange='submitExcerise_5()'\/>";
+exercise_5 += "                            <textarea type='text' name='thought_2' onchange='submitExcerise_5()'\/></textarea>";
 exercise_5 += "                        <\/td>";
 exercise_5 += "                        <td>";
 exercise_5 += "                            <div data-role=\"fieldcontain\">";
@@ -354,13 +357,16 @@ exercise_5 += "                                    <option value=\"generating_st
 exercise_5 += "                                <\/select>";
 exercise_5 += "                            <\/div>";
 exercise_5 += "                        <\/td>";
+exercise_5 += "                        <td>";
+exercise_5 += "                            <div id='e5_2_check' style='color:#00FF00;visibility:hidden;'>&#x2713;<\/div>";
+exercise_5 += "                        <\/td>";
 exercise_5 += "                    <\/tr>";
 exercise_5 += "                    <tr>";
 exercise_5 += "                        <td>";
-exercise_5 += "                            <input type='text' name='fear_3' placeholder='3.' onchange='submitExcerise_5()'\/>";
+exercise_5 += "                            <textarea type='text' name='fear_3' placeholder='3.' onchange='submitExcerise_5()'\/></textarea>";
 exercise_5 += "                        <\/td>";
 exercise_5 += "                        <td>";
-exercise_5 += "                            <input type='text' name='thought_3' onchange='submitExcerise_5()'\/>";
+exercise_5 += "                            <textarea type='text' name='thought_3' onchange='submitExcerise_5()'\/></textarea>";
 exercise_5 += "                        <\/td>";
 exercise_5 += "                        <td>";
 exercise_5 += "                            <div data-role=\"fieldcontain\">";
@@ -374,6 +380,9 @@ exercise_5 += "                                    <option value=\"spotlight_eff
 exercise_5 += "                                    <option value=\"generating_stories\">Generating Stories<\/option>";
 exercise_5 += "                                <\/select>";
 exercise_5 += "                            <\/div>";
+exercise_5 += "                        <\/td>";
+exercise_5 += "                        <td>";
+exercise_5 += "                            <div id='e5_3_check' style='color:#00FF00;visibility:hidden;'>&#x2713;<\/div>";
 exercise_5 += "                        <\/td>";
 exercise_5 += "                    <\/tr>";
 exercise_5 += "                <\/table>";
@@ -405,12 +414,18 @@ function loadExercise_5() {
     if (localStorage['exercise_5']) {
         var exercise_5 = JSON.parse(localStorage['exercise_5']);
 
-        $("#fear_type_1").val(exercise_5['fear_type_1']).attr('selected', true)
-        $("#fear_type_2").val(exercise_5['fear_type_2']).attr('selected', true)
-        $("#fear_type_3").val(exercise_5['fear_type_3']).attr('selected', true)
+        for (var i = 1; i<=3; i++) {
+            $("#fear_type_"+i).val(exercise_5['fear_type_'+i]).attr('selected', true)
+            if (exercise_5['fear_type_'+i]) {
+                console.log(exercise_5['fear_type_'+i]);
+                $('#e5_'+i+'_check').css('visibility','visible');
+            }
+        }  
+
         for (var i = 1; i<=2; i++) {
             if (exercise_5['vary_'+i]) {
                 $('#vary_'+i).attr("checked",true)
+                $('#e5_'+i+'_check').css('visibility','visible');
             }
         }  
     }
@@ -438,7 +453,13 @@ function submitExcerise_5() {
 
     var exercise_5 = {};
     for (var i = 1; i <= 3; i++) {
-        exercise_5['fear_type_'+i] = $("#fear_type_"+i).val();
+        if ($("#fear_type_"+i).val() != 'none') {
+            $('#e5_'+i+'_check').css('visibility','visible');
+            exercise_5['fear_type_'+i] = $("#fear_type_"+i).val();
+        } else {
+            $('#e5_'+i+'_check').css('visibility','hidden');
+        }
+
     }
 
 
@@ -475,7 +496,7 @@ exercise_7 += "                        <\/td>";
 exercise_7 += "                    <\/tr>";
 exercise_7 += "                    <tr id='exercise_7_row_1'>";
 exercise_7 += "                        <td>";
-exercise_7 += "                            <input type='text' class='exercise_7_thought' onchange='submitExcerise_7()'\/>";
+exercise_7 += "                            <textarea type='text' class='exercise_7_thought' onchange='submitExcerise_7()'\/></textarea>";
 exercise_7 += "                        <\/td>";
 exercise_7 += "                        <td>";
 exercise_7 += "                            <div data-role=\"fieldcontain\">";
@@ -491,9 +512,12 @@ exercise_7 += "                                <\/select>";
 exercise_7 += "                            <\/div>";
 exercise_7 += "                        <\/td>";
 exercise_7 += "                        <td>";
-exercise_7 += "                            <input type='text' class='exercise_7_notice' onchange='submitExcerise_7()'\/>";
+exercise_7 += "                            <textarea type='text' class='exercise_7_notice' onchange='submitExcerise_7()'\/></textarea>";
 exercise_7 += "                        <\/td>";
 exercise_7 += "                        <td >";
+exercise_7 += "                        <\/td>";
+exercise_7 += "                        <td>";
+exercise_7 += "                            <div id='e7_1_check' style='color:#00FF00;visibility:hidden;'>&#x2713;<\/div>";
 exercise_7 += "                        <\/td>";
 exercise_7 += "                    <\/tr>";
 exercise_7 += "                <\/table>";
@@ -582,11 +606,18 @@ function loadExercise_7() {
                 var thoughts = document.getElementsByClassName('exercise_7_thought');
                 var notices = document.getElementsByClassName('exercise_7_notice');
 
-                thoughts[i-1].value = exercise_7['exercise_7_thought_'+i];
-                notices[i-1].value = exercise_7['exercise_7_notice_'+i];
+
+            thoughts[i-1].value = exercise_7['exercise_7_thought_'+i];
+            notices[i-1].value = exercise_7['exercise_7_notice_'+i];
+                if ((exercise_7['exercise_7_thought_'+i].length > 0) && (exercise_7['exercise_7_notice_'+i].length > 0) && (exercise_7['exercise_7_strategy_'+i] != 'none')) {
+                    $('#e7_'+i+'_check').css('visibility','visible');
+                }
             } else {
                 exercise_7_add_row(exercise_7['exercise_7_thought_'+i],exercise_7['exercise_7_notice_'+i],true);
             }
+
+            thoughts[i-1].value = exercise_7['exercise_7_thought_'+i];
+            notices[i-1].value = exercise_7['exercise_7_notice_'+i];
             $("#exercise_7_strategy_"+i).val(exercise_7['exercise_7_strategy_'+i]).attr('selected', true)
         }
     }
@@ -601,9 +632,17 @@ function submitExcerise_7() {
     var thoughts = document.getElementsByClassName('exercise_7_thought');
     var notices = document.getElementsByClassName('exercise_7_notice');
     for (var i = 1; i<table.rows.length;i++){
-
-        exercise_7['exercise_7_thought_'+i] = thoughts[i-1].value
         var id = strategies[i+i-1].id; //i'm not proud of myself
+
+        if (i===1) {
+            if ((thoughts[i-1].value.length > 0) && (notices[i-1].value.length > 0) && ($("#"+id).val() != 'none')) {
+                $('#e7_'+i+'_check').css('visibility','visible');
+            } else {
+                $('#e7_'+i+'_check').css('visibility','hidden');
+            }
+        }
+        exercise_7['exercise_7_thought_'+i] = thoughts[i-1].value
+
         console.log("id is:" +id)
         exercise_7['exercise_7_strategy_'+i] = $("#"+id).val();
         exercise_7['exercise_7_notice_'+i] =  notices[i-1].value
@@ -640,12 +679,12 @@ function exercise_7_add_row(thought, notice, pageload) {
     var cell3=row.insertCell(2);
     var cell4=row.insertCell(3);
 
-    cell1.innerHTML="<input type='text' class='exercise_7_thought' onchange='submitExcerise_7();' id='exercise_7_thought_"+row_number+"' value='"+thought+"'/>";
+    cell1.innerHTML="<textarea type='text' class='exercise_7_thought' onchange='submitExcerise_7();' id='exercise_7_thought_"+row_number+"' value='"+thought+"'/></textarea>";
 
 
     cell2.innerHTML="<div data-role='fieldcontain'><select class='exercise_7_strategy' onchange='submitExcerise_7();' data-mini='true' id='exercise_7_strategy_"+row_number+"'  data-native-menu='false'><option value='none'></option><option value='Fortune-Telling'>Fortune-Telling</option><option value='Mind Reading'>Mind Reading</option><option value='Shoulding'>'Shoulding'</option><option value='Postmortem'>Postmortem</option><option value='The Spotlight Effect'>The Spotlight Effect</option><option value='Generating Stories'>Generating Stories</option></select></div>";
 
-    cell3.innerHTML = "<input type='text' class='exercise_7_notice' onchange='submitExcerise_7();' name='exercise_7_notice_1' value='"+notice+"' />";
+    cell3.innerHTML = "<textarea type='text' class='exercise_7_notice' onchange='submitExcerise_7();' name='exercise_7_notice_1' value='"+notice+"' /></textarea>";
     cell4.innerHTML = "<a href='#' id='exercise_7_remove_"+row_number+"' onclick='exercise_7_remove_row("+row_number+");' data-role='button' data-icon='delete' data-iconpos='notext' data-mini='true' data-inline='true'>Delete</a>";
 
 

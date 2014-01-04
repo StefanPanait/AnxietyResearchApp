@@ -32,7 +32,7 @@
                     <a href="#popupContent" data-rel="popup" data-position-to="window">Content</a>
                 </li>
                 <li>
-                    <a href="#popupProgress" data-rel="popup" data-position-to="window">Progress</a>
+                    <a href="#popupProgress" onclick='update_progress();' data-rel="popup" data-position-to="window">Progress</a>
                 </li>
                 <li>
                     <a href="#popupExercises" data-rel="popup" data-position-to="window">Exercises</a>
@@ -142,8 +142,8 @@
 
     <div data-role="popup" id="popupProgress" data-theme="a">
         <a href="#" data-rel="back" data-role="button" data-theme="a" data-icon="delete" data-iconpos="notext" class="ui-btn-right">Close</a>
-        <p>Progress Completed: 70%</p>
-        <meter value="7" min="0" max="10" style="width:100%;height:2em;margin:0px 0px 0px 0px;">75%</meter>
+         <div id='progress_percent'><p>Progress Completed:70%</p></div>
+        <meter id='progres_bar' value="0" min="0" max="16" style="width:100%;height:2em;margin:0px 0px 0px 0px;">75%</meter>
 
 
     </div>
@@ -170,6 +170,62 @@
             return content_height;
         }
         $('.background_home').height(getRealContentHeight()-40);
+        function update_progress() {
+            var progress = 0;
+            var total = 16;
+
+            //exercise 1
+            if (localStorage['exercise_1']) {
+                var exercise_1 = JSON.parse(localStorage['exercise_1']);
+                for (var i = 1; i <= 3; i++) {
+                    if (exercise_1['fear_'+i].length>0) {
+                        progress ++;
+                    }
+                }
+            }
+            //exercise 2
+            if (localStorage['exercise_2']) {
+                var exercise_2 = JSON.parse(localStorage['exercise_2']);
+                for (var i = 1; i <= 3; i++) {
+                    if (exercise_2['thought_'+i].length>0) {
+                        progress ++;
+                    }
+                }
+            }
+            //exercise 4
+            if (localStorage['exercise_4']) {
+                var exercise_4 = JSON.parse(localStorage['exercise_4']);
+                for (var i = 1; i<=6; i++) {
+                    if (exercise_4['story_'+i]) {
+                        progress ++;
+                    }           
+                }
+            }
+            //exercise 5
+            if (localStorage['exercise_5']) {
+                var exercise_5 = JSON.parse(localStorage['exercise_5']);
+
+                for (var i = 1; i<=3; i++) {
+                    $("#fear_type_"+i).val(exercise_5['fear_type_'+i]).attr('selected', true)
+                    if (exercise_5['fear_type_'+i]) {
+                        progress ++;
+                    }
+                } 
+            }
+            //exercise 7
+            if (localStorage['exercise_7']) {
+                var exercise_7 = JSON.parse(localStorage['exercise_7']);
+                if ((exercise_7['exercise_7_thought_1'].length > 0) && (exercise_7['exercise_7_notice_1'].length > 0) && (exercise_7['exercise_7_strategy_1'] != 'none')) {
+                    progress ++;
+                }
+            }
+            var pBar = document.getElementById('progres_bar');
+            var pPer = document.getElementById('progress_percent');
+            pPer.innerHTML = "<p> Progress Completed:"+progress/16*100+"% </p>";
+            pBar.value = progress;
+
+            console.log("progress: "+progress);
+        }
     </script>
 </body>
 
