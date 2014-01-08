@@ -7,7 +7,7 @@
     <!-- versionCode is optional and Android only -->
     <preference name="phonegap-version" value="3.0.0" />
 
-    <name>Anxiety Research Application</name>
+    <name>Defusion App</name>
 
     <description>
         A mobile app for a pilot research study on anxiety at WLU. 
