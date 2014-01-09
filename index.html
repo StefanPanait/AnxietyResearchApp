@@ -18,6 +18,9 @@
     <script src="phonegap.js"></script>
     <script src="device.js"></script>
     <script src="local-notification.js"></script>
+    <script src="Media.js"></script>
+    <script src="MediaError.js"></script>
+
 </head>
 
 <body>
@@ -44,11 +47,7 @@
 
     <div data-role="popup" id="popupExercises" data-theme="a">
         <a href="#" data-rel="back" data-role="button" data-theme="a" data-icon="delete" data-iconpos="notext" class="ui-btn-right">Close</a>
-        <audio controls>
-            <source src="audio/beep.ogg" type="audio/ogg">
-            <source src="audio/beep.mp3" type="audio/mpeg">
-            Your browser does not support the audio element.
-        </audio>
+        <a href="audio.html">Audio</a>
         <a href="#" onclick="clear_Storage();" data-role="button">Clear Storage</a>
 
         <ul data-role="listview" data-theme="a">
