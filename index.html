@@ -155,11 +155,12 @@
                 localStorage['audio'] = true;
 
                 var now = new Date().getTime();
+                var _60_seconds_from_now = new Date(now + 60*1000);
                 window.plugin.notification.local.add({ 
                     id:         1, // is converted to a string
                     title:      'Reminder',
                     message:    'Have you completed your anxiety exercise today?',
-                    date:       now,
+                    date:       _60_seconds_from_now,
                     repeat:     'daily'
                 });
 
