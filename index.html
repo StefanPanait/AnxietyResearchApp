@@ -21,7 +21,7 @@
 
 </head>
 
-<body>
+<body onload="init()">
 
     <div class='background_home'>
     </div>
@@ -150,20 +150,23 @@
     </div>
 
     <script>
-        if (!localStorage['init']) {
-            localStorage['audio'] = true;
+        function init() {
+            if (!localStorage['init']) {
+                localStorage['audio'] = true;
 
-            var now = new Date().getTime();
-            window.plugin.notification.local.add({ 
-                id:         1, // is converted to a string
-                title:      'Reminder',
-                message:    'Have you completed your anxiety exercise today?',
-                date:       now,
-                repeat:     'daily'
-            });
+                var now = new Date().getTime();
+                window.plugin.notification.local.add({ 
+                    id:         1, // is converted to a string
+                    title:      'Reminder',
+                    message:    'Have you completed your anxiety exercise today?',
+                    date:       now,
+                    repeat:     'daily'
+                });
 
 
-            localStorage['init'] = true;
+                localStorage['init'] = true;
+            }
+
         }
         function clear_Storage() {
             localStorage.clear();
