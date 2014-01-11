@@ -6,30 +6,58 @@
 </head>
 
 <body>
-
     <div data-role="page" data-position="fixed">
         <div data-role="header">
-            <h1>Introduction</h>
+            <div>
+                <img id='audio1_1on' src="../images/audio_on.jpg" style='position:fixed;top:7px;right:10px;height:30px;width:30px;' onClick='playAudio();' />
+                <img id='audio1_1off' src="../images/audio_off.jpg" style='position:fixed;top:7px;right:10px;height:30px;width:30px;visibility:hidden;' onClick='playAudio();' />
+            </div>
+            <h1>Introduction</h1>
+
         </div>
-        <!-- /header -->
+        <video style='visibility:hidden' width="0" height="0" id='audio1_1' src="../audio/Open Window.mp3"></video>
+
+        <script>
+            //autoload audio
+            if (localStorage['audio'] === 'true') {
+                document.getElementById("audio1_1on").style.visibility = "hidden";
+                document.getElementById("audio1_1off").style.visibility = "visible";
+                var audio = document.getElementById("audio1_1");
+                audio.play();
+            }
+            function playAudio() {
+                var audio = document.getElementById("audio1_1");
+                if (localStorage['audio'] === 'true') {
+                    localStorage['audio'] = 'false';
+                    document.getElementById("audio1_1on").style.visibility = "visible";
+                    document.getElementById("audio1_1off").style.visibility = "hidden";
+                    audio.pause();
+                } else {
+                    localStorage['audio'] = 'true';
+                    document.getElementById("audio1_1on").style.visibility = "hidden";
+                    document.getElementById("audio1_1off").style.visibility = "visible";
+                    var audio = document.getElementById("audio1_1");
+                    audio.play();
+                }
+            }
+        </script>
 
         <div data-role="content">
+
             <p>
                 If you are using this app, chances are that you are one of the approximately 20 percent of adults who experience significant fear of public speaking, or one of the 15 percent who are very anxious about meeting new people. You are not alone!
                 <br>
+                <br>If you are using this app, it is also likely that you are not living the life you truly want, that struggling with social fear has kept you from getting the most out of your friendships, family relationships, and play.
                 <br>
-                If you are using this app, it is also likely that you are not living the life you truly want, that struggling with social fear has kept you from getting the most out of your friendships, family relationships, and play.
-                <br>
-                <br> 
-                There is hope though! Here, we will provide you with strategies to defuse from your anxious thoughts and help you "get out of your mind and into your life." 
+                <br>There is hope though! Here, we will provide you with strategies to defuse from your anxious thoughts and help you "get out of your mind and into your life."
             </p>
-           
+
         </div>
         <!-- /content -->
-                    
+
         <div data-role="footer" data-position="fixed">
             <div data-role="navbar" data-iconpos="right">
-                 <ul>
+                <ul>
                     <li>
                         <a href="#" class="ui-btn-active ui-state-persist">Previous</a>
                     </li>
@@ -47,6 +75,6 @@
 
     </div>
     <!-- /page -->
-
 </body>
+
 </html>
