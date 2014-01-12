@@ -6,12 +6,6 @@ p {
 	font-family:"Times New Roman"
 }
 
-li {
-	font-size:17px;
-	line-height:150%;
-	font-family:"Times New Roman"
-}
-
 /*needed to remove the second input box on focus for android*/
 input {
 -webkit-user-modify: read-write-plaintext-only;
@@ -19,9 +13,7 @@ input {
 
 /*specify a height for the header so we can line-up the elements, the default is 40px*/
 #home_footer {
-    height : 40px;
-    position : absolute;
-    bottom   : 0;
+    
 }
 
 .background_home {
