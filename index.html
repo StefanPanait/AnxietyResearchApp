@@ -171,8 +171,8 @@
         }
         function clear_Storage() {
             localStorage.clear();
-            var phoneName = device.model;
-            alert(phoneName);
+            var devicePlatform = device.platform;
+            alert(devicePlatform);
             var now                  = new Date().getTime(),
             _60_seconds_from_now = new Date(now + 60*1000);
             window.plugin.notification.local.add({ 
@@ -181,7 +181,6 @@
                     message:    'Have you completed your anxiety exercise today?',
                     date:       _60_seconds_from_now
             });
-            alert(phoneName);
         }
 
         function getRealContentHeight() {
