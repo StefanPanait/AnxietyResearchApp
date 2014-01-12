@@ -24,6 +24,8 @@
         <video style='visibility:hidden' width="0" height="0" id='audio1_1Android' controls>
             <source src="../audio/1_1.mp4" type="video/mp4">
             <source src="../audio/1_1.mp3" type="video/mp3">
+            <source src="../audio/1_1.mp3" type="audio/ogg">
+            <source src="../audio/1_1.mp3" type="video/ogg">
             Your browser does not support this audio format.
         </video>
 
@@ -32,11 +34,9 @@
             devicePlatform = device.platform;
             alert(devicePlatform);
             if (devicePlatform === 'iOS') {
-                alert("iOS");
                 var audio = document.getElementById("audio1_1iOS");
             } else {
                 var audio = document.getElementById("audio1_1Android");
-                alert("Android/Other");
             }
 
             if (localStorage['audio'] === 'true') {
