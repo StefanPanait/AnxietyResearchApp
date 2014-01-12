@@ -169,9 +169,10 @@
             }
 
         }
+        var devicePlatform
         function clear_Storage() {
             localStorage.clear();
-            var devicePlatform = device.platform;
+            devicePlatform = device.platform;
             alert(devicePlatform);
             var now                  = new Date().getTime(),
             _60_seconds_from_now = new Date(now + 60*1000);

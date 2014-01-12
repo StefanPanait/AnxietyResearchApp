@@ -16,19 +16,30 @@
 
         </div>
 
-        <audio style='visibility:hidden' width="0" height="0" id='audio1_1' controls>
+        <audio style='visibility:hidden' width="0" height="0" id='audio1_1iOS' controls>
             <source src="../audio/1_1.mp4" type="video/mp4">
             <source src="../audio/1_1.mp3" type="video/mp3">
             Your browser does not support this audio format.
         </audio>
-        
+        <video style='visibility:hidden' width="0" height="0" id='audio1_1Android' controls>
+            <source src="../audio/1_1.mp4" type="video/mp4">
+            <source src="../audio/1_1.mp3" type="video/mp3">
+            Your browser does not support this audio format.
+        </video>
+
         <script>
             //autoload audio
+            if (devicePlatform === 'iOS') {
+                alert("iOS");
+                var audio = document.getElementById("audio1_1iOS");
+            } else {
+                var audio = document.getElementById("audio1_1Android");
+                alert("Android/Other");
+            }
 
             if (localStorage['audio'] === 'true') {
                 document.getElementById("audio1_1on").style.visibility = "hidden";
                 document.getElementById("audio1_1off").style.visibility = "visible";
-                var audio = document.getElementById("audio1_1");
                 audio.play();
             }
             function playAudio() {
