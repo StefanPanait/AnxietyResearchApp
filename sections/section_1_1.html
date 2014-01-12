@@ -29,6 +29,7 @@
 
         <script>
             //autoload audio
+            alert(devicePlatform);
             if (devicePlatform === 'iOS') {
                 alert("iOS");
                 var audio = document.getElementById("audio1_1iOS");
@@ -43,7 +44,6 @@
                 audio.play();
             }
             function playAudio() {
-                var audio = document.getElementById("audio1_1");
                 if (localStorage['audio'] === 'true') {
                     localStorage['audio'] = 'false';
                     document.getElementById("audio1_1on").style.visibility = "visible";
@@ -53,7 +53,6 @@
                     localStorage['audio'] = 'true';
                     document.getElementById("audio1_1on").style.visibility = "hidden";
                     document.getElementById("audio1_1off").style.visibility = "visible";
-                    var audio = document.getElementById("audio1_1");
                     audio.play();
                 }
             }
