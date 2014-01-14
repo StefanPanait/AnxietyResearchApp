@@ -29,30 +29,32 @@
             Your browser does not support this audio format.
         </video>
 
+
         <script>
             //autoload audio
+            var section = "audio1_1";
             devicePlatform = device.platform;
             if (devicePlatform === 'iOS') {
-                var audio = document.getElementById("audio1_1iOS");
+                var audio = document.getElementById(section+"iOS");
             } else {
-                var audio = document.getElementById("audio1_1Android");
+                var audio = document.getElementById(section+"Android");
             }
 
             if (localStorage['audio'] === 'true') {
-                document.getElementById("audio1_1on").style.visibility = "hidden";
-                document.getElementById("audio1_1off").style.visibility = "visible";
+                document.getElementById(section+"on").style.visibility = "hidden";
+                document.getElementById(section+"off").style.visibility = "visible";
                 audio.play();
             }
             function playAudio() {
                 if (localStorage['audio'] === 'true') {
                     localStorage['audio'] = 'false';
-                    document.getElementById("audio1_1on").style.visibility = "visible";
-                    document.getElementById("audio1_1off").style.visibility = "hidden";
+                    document.getElementById(section+"on").style.visibility = "visible";
+                    document.getElementById(section+"off").style.visibility = "hidden";
                     audio.pause();
                 } else {
                     localStorage['audio'] = 'true';
-                    document.getElementById("audio1_1on").style.visibility = "hidden";
-                    document.getElementById("audio1_1off").style.visibility = "visible";
+                    document.getElementById(section+"on").style.visibility = "hidden";
+                    document.getElementById(section+"off").style.visibility = "visible";
                     audio.play();
                 }
             }
