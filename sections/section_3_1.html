@@ -31,7 +31,11 @@
         <script>
             //autoload audio
             var section = "audio3_1";
-            devicePlatform = device.platform;
+            if (typeof(device) != "undefined") {
+                devicePlatform = device.platform;
+            } else {
+                devicePlatform = "Android";
+            }
             if (devicePlatform === 'iOS') {
                 var audio = document.getElementById(section+"iOS");
             } else {
