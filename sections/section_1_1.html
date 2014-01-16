@@ -13,11 +13,8 @@
                 <img id='audio1_1off' src="../images/audio_off.png" style='position:fixed;top:7px;right:10px;height:30px;width:30px;visibility:hidden;' onClick='playAudio();' />
             </div>
             <h1>Introduction</h1>
-
         </div>
-
         <div data-role="content">
-
             <p>
                 If you are using this app, chances are that you are one of the approximately 20 percent of adults who experience significant fear of public speaking, or one of the 15 percent who are very anxious about meeting new people. You are not alone!
                 <br>
@@ -28,7 +25,6 @@
 
         </div>
         <!-- /content -->
-
         <div data-role="footer" data-position="fixed">
             <div data-role="navbar" data-iconpos="right">
                 <ul>
@@ -46,19 +42,20 @@
             <!-- /navbar -->
         </div>
         <!-- /footer -->
-
-        <audio style='visibility:hidden;height:0px;width:0px;' id='audio1_1iOS'>
-            <source src="../audio/1_1.mp4" type="video/mp4">
-            <source src="../audio/1_1.mp3" type="video/mp3">
-            Your browser does not support this audio format.
-        </audio>
-        <video style='visibility:hidden;height:0px;width:0px;' id='audio1_1Android'>
-            <source src="../audio/1_1.mp4" type="video/mp4">
-            <source src="../audio/1_1.mp3" type="video/mp3">
-            <source src="../audio/1_1.mp3" type="audio/ogg">
-            <source src="../audio/1_1.mp3" type="video/ogg">
-            Your browser does not support this audio format.
-        </video>
+        <div style='visibility:hidden;height:0px;width:0px;'>
+            <audio style='visibility:hidden;height:0px;width:0px;' id='audio1_1iOS'>
+                <source src="../audio/1_1.mp4" type="video/mp4">
+                <source src="../audio/1_1.mp3" type="video/mp3">
+                Your browser does not support this audio format.
+            </audio>
+            <video style='visibility:hidden;height:0px;width:0px;' id='audio1_1Android'>
+                <source src="../audio/1_1.mp4" type="video/mp4">
+                <source src="../audio/1_1.mp3" type="video/mp3">
+                <source src="../audio/1_1.mp3" type="audio/ogg">
+                <source src="../audio/1_1.mp3" type="video/ogg">
+                Your browser does not support this audio format.
+            </video>
+        </div>
         <script>
             //autoload audio
             var section = "audio1_1";
@@ -99,7 +96,6 @@
                 }
             }
         </script>
-
     </div>
     <!-- /page -->
 </body>
