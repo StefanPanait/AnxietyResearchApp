@@ -62,6 +62,9 @@
         <script>
             //autoload audio
             var section = "audio1_1";
+            var audio = document.getElementById(section+"iOS");
+            audio.play();
+            audio.pause();
             if (typeof(device) != "undefined") {
                 devicePlatform = device.platform;
             } else {
