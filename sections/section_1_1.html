@@ -32,6 +32,10 @@
 
         <script>
             //autoload audio
+            var audio = document.getElementById(section+"iOS");
+            audio.style.visibility = 'hidden'
+            var audio = document.getElementById(section+"Android");
+            audio.style.visibility = 'hidden'
             var section = "audio1_1";
             if (typeof(device) != "undefined") {
                 devicePlatform = device.platform;
