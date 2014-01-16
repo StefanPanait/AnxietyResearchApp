@@ -16,12 +16,12 @@
 
         </div>
 
-        <audio style='visibility:hidden' width="0" height="0" id='audio1_1iOS' controls>
+        <audio style='display:none' width="0" height="0" id='audio1_1iOS' controls>
             <source src="../audio/1_1.mp4" type="video/mp4">
             <source src="../audio/1_1.mp3" type="video/mp3">
             Your browser does not support this audio format.
         </audio>
-        <video style='visibility:hidden' width="0" height="0" id='audio1_1Android' controls>
+        <video style='display:none' width="0" height="0" id='audio1_1Android' controls>
             <source src="../audio/1_1.mp4" type="video/mp4">
             <source src="../audio/1_1.mp3" type="video/mp3">
             <source src="../audio/1_1.mp3" type="audio/ogg">
@@ -33,10 +33,6 @@
         <script>
             //autoload audio
             var section = "audio1_1";
-            var audio = document.getElementById(section+"iOS");
-            audio.style.visibility = 'hidden'
-            var audio = document.getElementById(section+"Android");
-            audio.style.visibility = 'hidden'
             if (typeof(device) != "undefined") {
                 devicePlatform = device.platform;
             } else {
