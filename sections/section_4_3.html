@@ -8,29 +8,11 @@
 <body>
 
     <div class='background_movietheater'>
-    </div>
-
-    <div data-role="header" style='position:absolute;bottom: 0;width:100%;'>
-        <div data-role="navbar">
-            <ul>
-                <li>
-                    <a href="section_4_2.html">Back</a>
-                </li>
-                <li>
-                    <a href="../index.html">Home</a>
-                </li>
-                <li>
-                    <a href="#"></a>
-                </li>
-            </ul>
-        </div><!-- /navbar -->
-    </div>
-    <!-- /footer -->
         <div>
-            <img id='audio4_3on' src="../images/audio_on.png" style='position:fixed;top:7px;right:10px;height:0px;width:0px;' onClick='playAudio();' />
-            <img id='audio4_3off' src="../images/audio_off.png" style='position:fixed;top:7px;right:10px;height:0px;width:0px;visibility:hidden;' onClick='playAudio();' />
+            <img id='audio4_3on' src="../images/audio_on.png" style='position:fixed;top:7px;right:10px;height:30px;width:30px;' onClick='playAudio();' />
+            <img id='audio4_3off' src="../images/audio_off.png" style='position:fixed;top:7px;right:10px;height:30px;width:30px;visibility:hidden;' onClick='playAudio();' />
         </div>
-        <audio style='visibility:hidden;height:0px;width:0px' id='audio4_3iOS'>
+          <audio style='visibility:hidden;height:0px;width:0px' id='audio4_3iOS'>
             <source src="../audio/1_1.mp4" type="video/mp4">
             <source src="../audio/1_1.mp3" type="video/mp3">
             Your browser does not support this audio format.
@@ -75,6 +57,25 @@
                 }
             }
         </script>
+    </div>
+
+    <div data-role="header" style='position:absolute;bottom: 0;width:100%;'>
+        <div data-role="navbar">
+            <ul>
+                <li>
+                    <a href="section_4_2.html">Back</a>
+                </li>
+                <li>
+                    <a href="../index.html">Home</a>
+                </li>
+                <li>
+                    <a href="#"></a>
+                </li>
+            </ul>
+        </div><!-- /navbar -->
+    </div>
+    <!-- /footer -->
+
 <script>
     $('.background_movietheater').height(getRealContentHeight());
 </script>
