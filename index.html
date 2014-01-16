@@ -150,6 +150,12 @@
     </div>
 
     <script>
+        if (localStorage['usage']) {
+            localStorage['usage'] += 1;
+        } else {
+            localStorage['usage'] = 1;
+        }
+        
         function init() {
             if (!localStorage['init']) {
                 localStorage['audio'] = true;
@@ -241,7 +247,7 @@
             }
             var pBar = document.getElementById('progres_bar');
             var pPer = document.getElementById('progress_percent');
-            pPer.innerHTML = "<p> Progress Completed:"+progress/16*100+"% </p>";
+            pPer.innerHTML = "<p> Progress Completed:"+progress/16*100+"% <br><br>Usage: "+localStorage['usage']+"</p>";
             pBar.value = progress;
 
             console.log("progress: "+progress);
