@@ -16,51 +16,6 @@
             <h1>Defusion Strategies Cont’d </h1>
         </div>
         <!-- /header -->
-        <audio style='visibility:hidden;height:0px;width:0px' id='audio3_2iOS' controls>
-            <source src="../audio/1_1.mp4" type="video/mp4">
-            <source src="../audio/1_1.mp3" type="video/mp3">
-            Your browser does not support this audio format.
-        </audio>
-        <video style='visibility:hidden;height:0px;width:0px' id='audio3_2Android' controls>
-            <source src="../audio/1_1.mp4" type="video/mp4">
-            <source src="../audio/1_1.mp3" type="video/mp3">
-            <source src="../audio/1_1.mp3" type="audio/ogg">
-            <source src="../audio/1_1.mp3" type="video/ogg">
-            Your browser does not support this audio format.
-        </video>
-        <script>
-            //autoload audio
-            var section = "audio3_2";
-            if (typeof(device) != "undefined") {
-                devicePlatform = device.platform;
-            } else {
-                devicePlatform = "Android";
-            }
-            if (devicePlatform === 'iOS') {
-                var audio = document.getElementById(section+"iOS");
-            } else {
-                var audio = document.getElementById(section+"Android");
-            }
-
-            if (localStorage['audio'] === 'true') {
-                document.getElementById(section+"on").style.visibility = "hidden";
-                document.getElementById(section+"off").style.visibility = "visible";
-                audio.play();
-            }
-            function playAudio() {
-                if (localStorage['audio'] === 'true') {
-                    localStorage['audio'] = 'false';
-                    document.getElementById(section+"on").style.visibility = "visible";
-                    document.getElementById(section+"off").style.visibility = "hidden";
-                    audio.pause();
-                } else {
-                    localStorage['audio'] = 'true';
-                    document.getElementById(section+"on").style.visibility = "hidden";
-                    document.getElementById(section+"off").style.visibility = "visible";
-                    audio.play();
-                }
-            }
-        </script>
         <div data-role="content">
             <h3> Ditching the Meaning of Your Thoughts: </h3>
             <p>
@@ -158,7 +113,51 @@
             <!-- /navbar -->
         </div>
         <!-- /footer -->
+        <audio style='visibility:hidden;height:0px;width:0px' id='audio3_2iOS' controls>
+            <source src="../audio/1_1.mp4" type="video/mp4">
+            <source src="../audio/1_1.mp3" type="video/mp3">
+            Your browser does not support this audio format.
+        </audio>
+        <video style='visibility:hidden;height:0px;width:0px' id='audio3_2Android' controls>
+            <source src="../audio/1_1.mp4" type="video/mp4">
+            <source src="../audio/1_1.mp3" type="video/mp3">
+            <source src="../audio/1_1.mp3" type="audio/ogg">
+            <source src="../audio/1_1.mp3" type="video/ogg">
+            Your browser does not support this audio format.
+        </video>
+        <script>
+            //autoload audio
+            var section = "audio3_2";
+            if (typeof(device) != "undefined") {
+                devicePlatform = device.platform;
+            } else {
+                devicePlatform = "Android";
+            }
+            if (devicePlatform === 'iOS') {
+                var audio = document.getElementById(section+"iOS");
+            } else {
+                var audio = document.getElementById(section+"Android");
+            }
 
+            if (localStorage['audio'] === 'true') {
+                document.getElementById(section+"on").style.visibility = "hidden";
+                document.getElementById(section+"off").style.visibility = "visible";
+                audio.play();
+            }
+            function playAudio() {
+                if (localStorage['audio'] === 'true') {
+                    localStorage['audio'] = 'false';
+                    document.getElementById(section+"on").style.visibility = "visible";
+                    document.getElementById(section+"off").style.visibility = "hidden";
+                    audio.pause();
+                } else {
+                    localStorage['audio'] = 'true';
+                    document.getElementById(section+"on").style.visibility = "hidden";
+                    document.getElementById(section+"off").style.visibility = "visible";
+                    audio.play();
+                }
+            }
+        </script>
     </div>
     <!-- /page -->
 
