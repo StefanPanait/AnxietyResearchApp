@@ -51,14 +51,12 @@
             <!-- /navbar -->
         </div>
         <!-- /footer -->
-        <audio style='visibility:hidden;height:0px;width:0px' id='audio1_2iOS'>
-            <source src="../audio/1_2.mp4" type="video/mp4">
-            <source src="../audio/1_2.mp3" type="video/mp3">
+        <audio style='visibility:hidden;height:0px;width:0px' id='audio1_2iOS' controls>
+            <source src="../audio/1_2.mp3" type="audio/mp3">
             Your browser does not support this audio format.
         </audio>
-        <video style='visibility:hidden;height:0px;width:0pxn' id='audio1_2Android'>
-            <source src="../audio/1_2.mp4" type="video/mp4">
-            <source src="../audio/1_2.mp3" type="video/mp3">
+        <video style='visibility:hidden;height:0px;width:0pxn' id='audio1_2Android' controls>
+            <source src="../audio/1_2.mp3" type="audio/mp3">
             Your browser does not support this audio format.
         </video>
 
@@ -73,6 +71,7 @@
             if (devicePlatform === 'iOS') {
                 var audio = document.getElementById(section+"iOS");
             } else {
+                console.log("hard");
                 var audio = document.getElementById(section+"Android");
             }
 
@@ -93,6 +92,7 @@
                     localStorage['audio'] = 'true';
                     document.getElementById(section+"on").style.visibility = "hidden";
                     document.getElementById(section+"off").style.visibility = "visible";
+                    console.log("hard");
                     audio.play();
                 }
             }
