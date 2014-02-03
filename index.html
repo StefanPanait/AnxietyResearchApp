@@ -106,8 +106,8 @@
         <div data-role="collapsible" data-theme="c" data-content-theme="a" data-iconpos="right">
             <h3>Anxious Thinking</h3>
             <ul data-role="listview" data-divider-theme="a" >
-                <li data-theme="a"> <a href="sections/section_2_1.html">Types of Anxious Thoughts</a></li>
-                <li data-theme="a"> <a href="sections/section_2_2.html">Types of Anxious Thoughts Cont'd</a></li>
+                <li data-theme="a"> <a href="sections/section_2_1.html">Types of Anxious Thinking</a></li>
+                <li data-theme="a"> <a href="sections/section_2_2.html">Types of Anxious Thinking Cont'd</a></li>
                 <li data-theme="a"> <a href="sections/section_2_3.html">Your Types of Anxious Thinking</a></li>
             </ul>
         </div>
@@ -152,6 +152,14 @@
     <script>
         if (localStorage['usage']) {
             localStorage['usage'] = parseInt(localStorage['usage']) + 1;
+
+            var date = new Date().setHours(0,0,0,0);
+            var init_date = parseInt(localStorage['init_date']);
+            var difference = parseInt((date - init_date) / (3600000*24));
+
+            if (difference <= 6) {
+                localStorage['day_'+difference] = parseInt(localStorage['day_'+difference]) + 1;
+            }
         } else {
             localStorage['usage'] = 1;
         }
@@ -159,36 +167,57 @@
         function init() {
             if (!localStorage['init']) {
                 localStorage['audio'] = true;
+                var init_date = new Date().setHours(0,0,0,0);
+                localStorage['init_date'] = init_date
 
-                var now = new Date().getTime();
-                var _60_seconds_from_now = new Date(now + 60*1000);
+                localStorage['day_0'] = 0
+                localStorage['day_1'] = 0
+                localStorage['day_2'] = 0
+                localStorage['day_3'] = 0
+                localStorage['day_4'] = 0
+                localStorage['day_5'] = 0
+                localStorage['day_6'] = 0
+
+                var first = new Date().setHours(10,0,0,0);
+                var second = new Date().setHours(15,0,0,0);
+                var third = new Date().setHours(20,0,0,0);
+
+                
+
                 window.plugin.notification.local.add({ 
                     id:         1, // is converted to a string
                     title:      'Reminder',
-                    message:    'Have you completed your anxiety exercise today?',
-                    date:       _60_seconds_from_now,
+                    message:    'Go through your defusion material!',
+                    date:       first,
+                    repeat:     'daily'
+                });
+
+                window.plugin.notification.local.add({ 
+                    id:         2, // is converted to a string
+                    title:      'Reminder',
+                    message:    'Go through your defusion material!',
+                    date:       second,
+                    repeat:     'daily'
+                });
+
+                window.plugin.notification.local.add({ 
+                    id:         3, // is converted to a string
+                    title:      'Reminder',
+                    message:    'Go through your defusion material!',
+                    date:       third,
                     repeat:     'daily'
                 });
 
 
                 localStorage['init'] = true;
+
+
             }
 
         }
         var devicePlatform;
         function clear_Storage() {
             localStorage.clear();
-            devicePlatform = device.platform;
-            alert(devicePlatform);
-            var now                  = new Date().getTime(),
-            _60_seconds_from_now = new Date(now + 60*1000);
-            window.plugin.notification.local.add({ 
-                    id:         1, // is converted to a string
-                    title:      'Reminder',
-                    message:    'Go through your defusion material!',
-                    repeat:     'daily',
-                    date:       _60_seconds_from_now
-            });
         }
 
         function getRealContentHeight() {
@@ -248,7 +277,16 @@
             }
             var pBar = document.getElementById('progres_bar');
             var pPer = document.getElementById('progress_percent');
-            pPer.innerHTML = "<p> Progress Completed:"+progress/16*100+"% <br><br>Usage: "+localStorage['usage']+"</p>";
+            
+            var html_string = "<p> Progress Completed:"+progress/16*100+"% <br><br>Usage: "+localStorage['usage']+"</p>";
+            html_string += "<p>0: "+localStorage['day_0'] +"</p>";
+            html_string += "<p>1: "+localStorage['day_1'] +"</p>";
+            html_string += "<p>2: "+localStorage['day_2'] +"</p>";
+            html_string += "<p>3: "+localStorage['day_3'] +"</p>";
+            html_string += "<p>4: "+localStorage['day_4'] +"</p>";
+            html_string += "<p>5: "+localStorage['day_5'] +"</p>";
+            html_string += "<p>6: "+localStorage['day_6'] +"</p>";
+            pPer.innerHTML = html_string;
             pBar.value = progress;
 
             console.log("progress: "+progress);
