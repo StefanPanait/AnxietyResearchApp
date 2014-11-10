@@ -25,8 +25,8 @@
 
     <div class='background_home'>
     </div>
-
-    <div data-role="header" style='position:absolute;bottom: 0;width:100%;height : 38px;'>
+    
+    <div data-role="footer" style='position:absolute;bottom: 0;width:100%;height : 38px;'>
         <div data-role="navbar">
             <ul>
                 <li>
@@ -36,23 +36,87 @@
                     <a href="#popupProgress" onclick='update_progress();' data-rel="popup" data-position-to="window">Progress</a>
                 </li>
                 <li>
-                    <a href="#popupExercises" data-rel="popup" data-position-to="window">Exercises</a>
+                    <a href="exercises/exercise_7.html">Exercises</a>
+                </li>
+                <li>
+                    <a href="#popuphelp" data-rel="popup" data-position-to="window">HELP</a>
                 </li>
             </ul>
         </div><!-- /navbar -->
     </div>
-    <!-- /footer -->
+    
 
-    <div data-role="popup" id="popupExercises" data-theme="a">
+
+    <div data-role="popup" id="popuphelp" data-theme="a">
         <a href="#" data-rel="back" data-role="button" data-theme="a" data-icon="delete" data-iconpos="notext" class="ui-btn-right">Close</a>
-        <!--<a href="#" onclick="clear_Storage();" data-role="button">Clear Storage</a>-->
 
-        <ul data-role="listview" data-theme="a">
-            <li data-role="list-divider" data-theme="a">
-                <center><h1>  Exercises  </h1></center> 
-            </li>
-            <li data-theme="a">
-                <a href="exercises/exercise_1.html">Exercise 1: Top Feared Social Situations</a>
+    </div>
+
+    <div data-role="popup" id="popupContent" data-theme="a" >
+        <a href="#" data-rel="back" data-role="button" data-theme="a" data-icon="delete" data-iconpos="notext" class="ui-btn-right">Close</a>
+        
+        <div data-role= "header" style='position:relative ; top: 0;width:100%;height : 38px;'>
+            <div data-role="navbar">
+                <ul>
+                    <li>
+                        <a href="#" onclick="showContent();" class="ui-btn-active"> Content </a>
+                    </li>
+                    <li>
+                        <a href="#" onclick="showExercises();"> Exercises </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        
+        <ul data-role="listview" id="list_content">
+            <div data-role="collapsible" data-theme="c" data-content-theme="a" data-iconpos="right">
+                <h3>What is Social Anxiety? </h3>
+                <ul data-role="listview" data-divider-theme="a" >
+                    <li> <a href="sections/section_1_1.html">Introduction</a></li>
+                    <li> <a href="sections/section_1_2.html">Defining Shyness and Social Anxiety</a></li>
+                    <li> <a href="sections/section_1_3.html">Fusion vs. Defusion</a></li>
+                </ul>
+            </div>
+
+            <div data-role="collapsible" data-theme="c" data-content-theme="a" data-iconpos="right">
+                <h3>Anxious Thinking</h3>
+                <ul data-role="listview" data-divider-theme="a" >
+                    <li> <a href="sections/section_2_1.html">Types of Anxious Thinking</a></li>
+                    <li> <a href="sections/section_2_2.html">Types of Anxious Thinking Cont'd</a></li>
+                    <li> <a href="sections/section_2_3.html">Your Types of Anxious Thinking</a></li>
+                </ul>
+            </div>
+
+            <div data-role="collapsible" data-theme="c" data-content-theme="a" data-iconpos="right">
+                <h3>Defusing from Your Socially Anxious Thoughts</h3>
+                <ul data-role="listview" data-divider-theme="a" >
+                    <li> <a href="sections/section_3_1.html">Defusion Strategies</a></li>
+                    <li> <a href="sections/section_3_2.html">Defusion Strategies Cont'd</a></li>
+                </ul>
+            </div>
+
+            <div data-role="collapsible" data-theme="c" data-content-theme="a" data-iconpos="right">
+                <h3>Awareness of Thinking</h3>
+                <ul data-role="listview" data-divider-theme="a" >
+                    <li> <a href="sections/section_4_1.html">Developing Your Awareness of Thinking</a></li>
+                    <li> <a href="sections/section_4_2.html">Exercise 6: Awareness of Thinking</a></li>
+                </ul>
+            </div>
+
+            <div data-role="collapsible" data-theme="c" data-content-theme="a" data-iconpos="right">
+                <h3>Summary of Defusion Strategies</h3>
+                <ul data-role="listview" data-divider-theme="a" >
+                    <li> <a href="sections/section_5.html">Summary of Defusion Strategies</a></li>
+
+                </ul>
+            </div>
+        </ul>
+        
+        <ul data-role="listview" id="list_exercises">
+            <li>
+                <a href="exercises/exercise_1.html">
+                Exercise 1: Top Feared Social Situations
+                </a>
             </li>
             <li>
                 <a href="exercises/exercise_2.html">
@@ -79,65 +143,9 @@
                     Exercise 6: Awareness of Thinking
                 </a>
             </li>
-            <li>
-                <a href="exercises/exercise_7.html">
-                    Exercise 7: Defusing from Your Anxious Thoughts
-                </a>
-            </li>
+        </ul>
+        
     </div>
-
-<div data-role="popup" id="popupContent" data-theme="a">
-    <a href="#" data-rel="back" data-role="button" data-theme="a" data-icon="delete" data-iconpos="notext" class="ui-btn-right">Close</a>
-
-    <ul data-role="listview" data-theme="a">
-        <li data-role="list-divider" data-theme="a">
-            <center><h1>  Content  </h1></center> 
-        </li>
-
-        <div data-role="collapsible" data-theme="c" data-content-theme="a" data-iconpos="right">
-            <h3>What is Social Anxiety? </h3>
-            <ul data-role="listview" data-divider-theme="a" >
-                <li data-theme="a"> <a href="sections/section_1_1.html">Introduction</a></li>
-                <li data-theme="a"> <a href="sections/section_1_2.html">Defining Shyness and Social Anxiety</a></li>
-                <li data-theme="a"> <a href="sections/section_1_3.html">Fusion vs. Defusion</a></li>
-            </ul>
-        </div>
-
-        <div data-role="collapsible" data-theme="c" data-content-theme="a" data-iconpos="right">
-            <h3>Anxious Thinking</h3>
-            <ul data-role="listview" data-divider-theme="a" >
-                <li data-theme="a"> <a href="sections/section_2_1.html">Types of Anxious Thinking</a></li>
-                <li data-theme="a"> <a href="sections/section_2_2.html">Types of Anxious Thinking Cont'd</a></li>
-                <li data-theme="a"> <a href="sections/section_2_3.html">Your Types of Anxious Thinking</a></li>
-            </ul>
-        </div>
-
-        <div data-role="collapsible" data-theme="c" data-content-theme="a" data-iconpos="right">
-            <h3>Defusing from Your Socially Anxious Thoughts</h3>
-            <ul data-role="listview" data-divider-theme="a" >
-                <li data-theme="a"> <a href="sections/section_3_1.html">Defusion Strategies</a></li>
-                <li data-theme="a"> <a href="sections/section_3_2.html">Defusion Strategies Cont'd</a></li>
-            </ul>
-        </div>
-
-        <div data-role="collapsible" data-theme="c" data-content-theme="a" data-iconpos="right">
-            <h3>Awareness of Thinking</h3>
-            <ul data-role="listview" data-divider-theme="a" >
-                <li data-theme="a"> <a href="sections/section_4_1.html">Developing Your Awareness of Thinking</a></li>
-                <li data-theme="a"> <a href="sections/section_4_2.html">Exercise 6: Awareness of Thinking</a></li>
-            </ul>
-        </div>
-
-        <div data-role="collapsible" data-theme="c" data-content-theme="a" data-iconpos="right">
-            <h3>Summary of Defusion Strategies</h3>
-            <ul data-role="listview" data-divider-theme="a" >
-                <li data-theme="a"> <a href="sections/section_5.html">Summary of Defusion Strategies</a></li>
-
-            </ul>
-        </div>
-</div>
-
-
 
 
 
@@ -148,8 +156,13 @@
 
 
     </div>
-
+    
     <script>
+
+        document.addEventListener('deviceready', function () {
+            // window.plugin.notification.local is now available
+        }, false);
+
         if (localStorage['usage']) {
             localStorage['usage'] = parseInt(localStorage['usage']) + 1;
 
@@ -162,6 +175,7 @@
             }
         } else {
             localStorage['usage'] = 1;
+
         }
         
         function init() {
@@ -180,43 +194,90 @@
 
                 var first = new Date();
                 first.setHours(10,0,0,0);
-                var second = new Date();
-                second.setHours(15,0,0,0);
-                var third = new Date()
-                third.setHours(20,0,0,0);
 
-                
+                var secondDay = new Date();
+                secondDay.setDate(first.getDate()+1);
+                secondDay.setHours(10,0,0,0);
+
+                var thirdDay = new Date();
+                thirdDay.setDate(secondDay.getDate()+1);
+                thirdDay.setHours(10,0,0,0);
+
+                var fourthDay = new Date();
+                fourthDay.setDate(thirdDay.getDate()+1);
+                fourthDay.setHours(10,0,0,0);
+
+                var fifthDay = new Date();
+                fifthDay.setDate(fourthDay.getDate()+1);
+                fifthDay.setHours(10,0,0,0);
+
+                var sixthDay = new Date();
+                sixthDay.setDate(fifthDay.getDate()+1);
+                sixthDay.setHours(10,0,0,0);
+
+                var seventhDay = new Date();
+                seventhDay.setDate(sixthDay.getDate()+1);
+                seventhDay.setHours(10,0,0,0);
 
                 window.plugin.notification.local.add({ 
                     id:         1, // is converted to a string
                     title:      'Reminder',
                     message:    'Go through your defusion material!',
                     date:       first,
-                    repeat:     'daily'
+                    //repeat:     'daily'
                 });
 
                 window.plugin.notification.local.add({ 
                     id:         2, // is converted to a string
                     title:      'Reminder',
                     message:    'Go through your defusion material!',
-                    date:       second,
-                    repeat:     'daily'
+                    date:       secondDay,
+                    //repeat:     'daily'
                 });
 
                 window.plugin.notification.local.add({ 
                     id:         3, // is converted to a string
                     title:      'Reminder',
                     message:    'Go through your defusion material!',
-                    date:       third,
-                    repeat:     'daily'
+                    date:       thirdDay,
+                    //repeat:     'daily'
                 });
 
+                window.plugin.notification.local.add({ 
+                    id:         4, // is converted to a string
+                    title:      'Reminder',
+                    message:    'Go through your defusion material!',
+                    date:       fourthDay,
+                    //repeat:     'daily'
+                });
 
+                window.plugin.notification.local.add({ 
+                    id:         5, // is converted to a string
+                    title:      'Reminder',
+                    message:    'Go through your defusion material!',
+                    date:       fifthDay,
+                    //repeat:     'daily'
+                });
+
+                window.plugin.notification.local.add({ 
+                    id:         6, // is converted to a string
+                    title:      'Reminder',
+                    message:    'Go through your defusion material!',
+                    date:       sixthDay,
+                    //repeat:     'daily'
+                });
+
+                window.plugin.notification.local.add({ 
+                    id:         7, // is converted to a string
+                    title:      'Reminder',
+                    message:    'Go through your defusion material!',
+                    date:       seventhDay,
+                    //repeat:     'daily'
+                });
+    
                 localStorage['init'] = true;
 
-
             }
-
         }
         var devicePlatform;
         function clear_Storage() {
@@ -295,9 +356,20 @@
             pPer.innerHTML = html_string;
             pBar.value = progress;
 
-            console.log("progress: "+progress);
         }
-        </script>
+        
+        $("#list_content").show();
+        $("#list_exercises").hide();
+        function showContent(){
+            $("#list_exercises").hide();
+            $("#list_content").show();
+        }
+        
+        function showExercises(){
+            $("#list_content").hide();
+            $("#list_exercises").show();
+        }
+    </script>
 
 </body>
 
