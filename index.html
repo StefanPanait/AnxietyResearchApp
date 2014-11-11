@@ -163,12 +163,13 @@
             // window.plugin.notification.local is now available
         }, false);
 
+        //total/daily usage changes 
         if (localStorage['usage']) {
             localStorage['usage'] = parseInt(localStorage['usage']) + 1;
 
             var date = new Date().setHours(0,0,0,0);
             var init_date = parseInt(localStorage['init_date']);
-            var difference = parseInt((date - init_date) / (3600000*24));
+            var difference = parseInt((date.getTime() - init_date.getTime()) / 86400000);
 
             if (difference <= 6) {
                 localStorage['day_'+difference] = parseInt(localStorage['day_'+difference]) + 1;
@@ -192,32 +193,27 @@
                 localStorage['day_5'] = 0
                 localStorage['day_6'] = 0
 
+                //Set timer for notifications
                 var first = new Date();
                 first.setHours(10,0,0,0);
-
+                
                 var secondDay = new Date();
-                secondDay.setDate(first.getDate()+1);
-                secondDay.setHours(10,0,0,0);
+                secondDay.setTime(first.getTime()+86400000);
 
                 var thirdDay = new Date();
-                thirdDay.setDate(secondDay.getDate()+1);
-                thirdDay.setHours(10,0,0,0);
+                thirdDay.setTime(thirdDay.getTime()+86400000);
 
                 var fourthDay = new Date();
-                fourthDay.setDate(thirdDay.getDate()+1);
-                fourthDay.setHours(10,0,0,0);
+                fourthDay.setTime(FourthDay.getTime()+86400000);
 
                 var fifthDay = new Date();
-                fifthDay.setDate(fourthDay.getDate()+1);
-                fifthDay.setHours(10,0,0,0);
+                fifthDay.setTime(fifthDay.getTime()+86400000);
 
                 var sixthDay = new Date();
-                sixthDay.setDate(fifthDay.getDate()+1);
-                sixthDay.setHours(10,0,0,0);
+                sixthDay.setTime(sixthDay.getTime()+86400000);
 
                 var seventhDay = new Date();
-                seventhDay.setDate(sixthDay.getDate()+1);
-                seventhDay.setHours(10,0,0,0);
+                seventhDay.setTime(seventhDay.getTime()+86400000);
 
                 window.plugin.notification.local.add({ 
                     id:         1, // is converted to a string
