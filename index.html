@@ -47,10 +47,6 @@
     
 
 
-    <div data-role="popup" id="popuphelp" data-theme="a">
-        <a href="#" data-rel="back" data-role="button" data-theme="a" data-icon="delete" data-iconpos="notext" class="ui-btn-right">Close</a>
-
-    </div>
 
     <div data-role="popup" id="popupContent" data-theme="a" >
         <a href="#" data-rel="back" data-role="button" data-theme="a" data-icon="delete" data-iconpos="notext" class="ui-btn-right">Close</a>
@@ -157,6 +153,12 @@
 
     </div>
     
+    
+    <div data-role="popup" id="popuphelp" data-theme="a">
+        <a href="#" data-rel="back" data-role="button" data-theme="a" data-icon="delete" data-iconpos="notext" class="ui-btn-right">Close</a>
+
+    </div>
+    
     <script>
 
         document.addEventListener('deviceready', function () {
@@ -215,13 +217,13 @@
                 var seventhDay = new Date();
                 seventhDay.setTime(seventhDay.getTime()+86400000);
 
-                window.plugin.notification.local.add({ 
+                /*window.plugin.notification.local.add({ 
                     id:         1, // is converted to a string
                     title:      'Reminder',
                     message:    'Go through your defusion material!',
                     date:       first,
                     //repeat:     'daily'
-                });
+                });*/
 
                 window.plugin.notification.local.add({ 
                     id:         2, // is converted to a string
