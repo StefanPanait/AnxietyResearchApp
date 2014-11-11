@@ -199,21 +199,27 @@
                 var first = new Date();
                 first.setHours(10,0,0,0);
                 
-                var secondDay = new Date();
+                var firstDay = new Date();
                 secondDay.setTime(first.getTime()+86400000);
 
+                var secondDay = new Date();
+                secondDay.setTime(firstDay.getTime()+86400000);
+
                 var thirdDay = new Date();
-                thirdDay.setTime(thirdDay.getTime()+86400000);
+                thirdDay.setTime(secondDay.getTime()+86400000);
 
                 var fourthDay = new Date();
-                fourthDay.setTime(FourthDay.getTime()+86400000);
+                fourthDay.setTime(thirdDay.getTime()+86400000);
 
                 var fifthDay = new Date();
-                fifthDay.setTime(fifthDay.getTime()+86400000);
+                fifthDay.setTime(fourthDay.getTime()+86400000);
 
                 var sixthDay = new Date();
-                sixthDay.setTime(sixthDay.getTime()+86400000);
-
+                sixthDay.setTime(fifthDay.getTime()+86400000);
+                
+                var seventhDay = new Date();
+                seventhDay.setTime(sixthDay.getTime()+86400000);
+                
                 var seventhDay = new Date();
                 seventhDay.setTime(seventhDay.getTime()+86400000);
 
@@ -224,6 +230,14 @@
                     date:       first,
                     //repeat:     'daily'
                 });*/
+
+                window.plugin.notification.local.add({ 
+                    id:         1, // is converted to a string
+                    title:      'Reminder',
+                    message:    'Go through your defusion material!',
+                    date:       firstDay,
+                    //repeat:     'daily'
+                });
 
                 window.plugin.notification.local.add({ 
                     id:         2, // is converted to a string
@@ -264,7 +278,7 @@
                     date:       sixthDay,
                     //repeat:     'daily'
                 });
-
+                
                 window.plugin.notification.local.add({ 
                     id:         7, // is converted to a string
                     title:      'Reminder',
