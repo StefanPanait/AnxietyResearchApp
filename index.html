@@ -39,7 +39,7 @@
                     <a href="exercises/exercise_7.html">Practice Defusion</a>
                 </li>
                 <li>
-                    <a href="#popuphelp" data-rel="popup" data-position-to="window">HELP</a>
+                    <a href="#popuphelp" data-rel="popup" data-position-to="window" id="helpbutton">HELP</a>
                 </li>
             </ul>
         </div><!-- /navbar -->
@@ -185,10 +185,11 @@
         if (localStorage['usage']) {
             localStorage['usage'] = parseInt(localStorage['usage']) + 1;
 
-            var date = new Date().setHours(0,0,0,0);
-            var init_date = parseInt(localStorage['init_date']);
-            var difference = parseInt((date.getTime() - init_date.getTime()) / 86400000);
-
+            var date = new Date();
+            var init_date = new Date(parseInt(localStorage['init_date']));
+            var difference =Math.floor((date.getTime() -  init_date.getTime())/ 86400000);
+			
+		
             if (difference <= 6) {
                 localStorage['day_'+difference] = parseInt(localStorage['day_'+difference]) + 1;
             }
@@ -196,27 +197,29 @@
             localStorage['usage'] = 1;
 
         }
-        
+
         function init() {
             if (!localStorage['init']) {
+			
+				localStorage['init'] = true;
                 localStorage['audio'] = true;
                 var init_date = new Date().setHours(0,0,0,0);
-                localStorage['init_date'] = init_date
+                localStorage['init_date'] = init_date;
 
-                localStorage['day_0'] = 1
-                localStorage['day_1'] = 0
-                localStorage['day_2'] = 0
-                localStorage['day_3'] = 0
-                localStorage['day_4'] = 0
-                localStorage['day_5'] = 0
-                localStorage['day_6'] = 0
+                localStorage['day_0'] = 0;
+                localStorage['day_1'] = 0;
+                localStorage['day_2'] = 0;
+                localStorage['day_3'] = 0;
+                localStorage['day_4'] = 0;
+                localStorage['day_5'] = 0;
+                localStorage['day_6'] = 0;
 
                 //Set timer for notifications
                 var first = new Date();
                 first.setHours(10,0,0,0);
                 
                 var firstDay = new Date();
-                secondDay.setTime(first.getTime()+86400000);
+                firstDay.setTime(first.getTime()+86400000);
 
                 var secondDay = new Date();
                 secondDay.setTime(firstDay.getTime()+86400000);
@@ -238,6 +241,8 @@
                 
                 var seventhDay = new Date();
                 seventhDay.setTime(seventhDay.getTime()+86400000);
+				
+				$("#helpbutton").click();
 
                 /*window.plugin.notification.local.add({ 
                     id:         1, // is converted to a string
@@ -302,8 +307,8 @@
                     date:       seventhDay,
                     //repeat:     'daily'
                 });
-    
-                localStorage['init'] = true;
+				
+
 
             }
         }
@@ -311,6 +316,7 @@
         function clear_Storage() {
             localStorage.clear();
         }
+
 
         function getRealContentHeight() {
             var viewport_height = $(window).height();
@@ -373,6 +379,7 @@
             var html_string = "<p> Progress Completed:"+progress/16*100+"% <br><br>Usage: "+localStorage['usage']+"</p>";
             if (localStorage['init_date']) {
                 html_string += "<p>1: "+localStorage['day_0'] +"</p>";
+				console.log(localStorage['day_0']);
                 html_string += "<p>2: "+localStorage['day_1'] +"</p>";
                 html_string += "<p>3: "+localStorage['day_2'] +"</p>";
                 html_string += "<p>4: "+localStorage['day_3'] +"</p>";
