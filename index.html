@@ -201,8 +201,8 @@
 
         function init() {
             if (!localStorage['init']) {
-			
-				localStorage['init'] = true;
+		$("#helpbutton").click();
+		localStorage['init'] = true;
                 localStorage['audio'] = true;
                 var init_date = new Date().setHours(0,0,0,0);
                 localStorage['init_date'] = init_date;
@@ -243,7 +243,7 @@
                 var seventhDay = new Date();
                 seventhDay.setTime(seventhDay.getTime()+86400000);
 				
-				$("#helpbutton").click();
+				
 
                 /*window.plugin.notification.local.add({ 
                     id:         1, // is converted to a string
