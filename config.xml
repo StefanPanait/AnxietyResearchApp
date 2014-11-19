@@ -21,7 +21,7 @@
     <icon src="icon.png" />
 
     <gap:plugin name="org.apache.cordova.device" version="0.7.5"/>
-    <gap:plugin name="de.appplant.cordova.plugin.local-notification" version="0.2.12" />
+    <gap:plugin name="de.appplant.cordova.plugin.local-notification" version="0.7.5" />
 <!--
     <gap:config-file platform="android" parent="/manifest/application">
         <activity android:launchMode="singleInstance" />
