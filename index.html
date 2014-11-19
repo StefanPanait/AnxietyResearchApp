@@ -197,12 +197,15 @@
             localStorage['usage'] = 1;
 
         }
-		
+
+        $(document).on("pagecreate",function(){
+            $("#helpbutton").click();
+        });
 
         function init() {
             if (!localStorage['init']) {
 		
-		localStorage['init'] = true;
+		        localStorage['init'] = true;
                 localStorage['audio'] = true;
                 var init_date = new Date().setHours(0,0,0,0);
                 localStorage['init_date'] = init_date;
@@ -242,16 +245,7 @@
                 
                 var seventhDay = new Date();
                 seventhDay.setTime(seventhDay.getTime()+86400000);
-				
-		$("#helpbutton").click();
 
-                /*window.plugin.notification.local.add({ 
-                    id:         1, // is converted to a string
-                    title:      'Reminder',
-                    message:    'Go through your defusion material!',
-                    date:       first,
-                    //repeat:     'daily'
-                });*/
 
                 window.plugin.notification.local.add({ 
                     id:         1, // is converted to a string
@@ -309,8 +303,6 @@
                     //repeat:     'daily'
                 });
 				
-
-
             }
         }
         var devicePlatform;
