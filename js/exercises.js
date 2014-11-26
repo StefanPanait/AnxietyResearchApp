@@ -475,7 +475,7 @@ function submitExcerise_5() {
 
 
 var exercise_7="";
-exercise_7 += " <h2> Exercise 7: Defusing from Your Anxious Thoughts <\/h2>";
+exercise_7 += " <h2> Practice defusion: Defusing from Your Anxious Thoughts <\/h2>";
 exercise_7 += "            <p>";
 exercise_7 += "                To get as much practice as possible, you can try defusing from everyday thoughts (for example, <i>I am having the thought that I want to eat a muffin for breakfast)<\/i> as well as social-anxiety thoughts. ";
 exercise_7 += "                <br>";
