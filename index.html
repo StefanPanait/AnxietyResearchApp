@@ -26,7 +26,7 @@
     <div class='background_home'>
     </div>
     
-    <div data-role="footer" style='position:absolute;bottom: 0;width:100%;height : 38px;'>
+    <div data-role="footer" style='position:absolute;bottom: 0;width:100%;height : 70px;'>
         <div data-role="navbar">
             <ul>
                 <li>
@@ -38,14 +38,19 @@
                 <li>
                     <a href="exercises/exercise_7.html">Practice Defusion</a>
                 </li>
-                <li>
+				<li>
                     <a href="#popuphelp" data-rel="popup" data-position-to="window" id="helpbutton">HELP</a>
                 </li>
             </ul>
         </div><!-- /navbar -->
+        <div data-role="navbar">
+            <ul>
+				<li>
+                    <a href="exercises/exercise_7.html">Practice Defusion</a>
+                </li>
+            </ul>
+        </div><!-- /navbar -->
     </div>
-    
-
 
 
     <div data-role="popup" id="popupContent" data-theme="a" >
@@ -181,30 +186,32 @@
             // window.plugin.notification.local is now available
         }, false);
 
-        //total/daily usage changes 
-        if (localStorage['usage']) {
-            localStorage['usage'] = parseInt(localStorage['usage']) + 1;
+        //everytime user switch app from background to front increase use by 1
+        document.addEventListener("resume", onResume, false);
+        function onResume(){
+            modifyUsage();
+        }
 
+        function modifyUsage(){
+            localStorage['usage'] = parseInt(localStorage['usage']) + 1;
             var date = new Date();
             var init_date = new Date(parseInt(localStorage['init_date']));
             var difference =Math.floor((date.getTime() -  init_date.getTime())/ 86400000);
-			
-		
+            
             if (difference <= 6) {
                 localStorage['day_'+difference] = parseInt(localStorage['day_'+difference]) + 1;
             }
-        } else {
-            localStorage['usage'] = 1;
-
         }
-
-        $(document).on("pagecreate",function(){
-            $("#helpbutton").click();
+	
+		$(document).on("pagecreate",function(){
+			if(!localStorage['usage']){
+				$("#helpbutton").click();
+			}
         });
 
         function init() {
             if (!localStorage['init']) {
-		
+		        localStorage['usage']=1;
 		        localStorage['init'] = true;
                 localStorage['audio'] = true;
                 var init_date = new Date().setHours(0,0,0,0);
@@ -302,14 +309,17 @@
                     date:       seventhDay,
                     //repeat:     'daily'
                 });
-				
+            }
+            else{
+                modifyUsage();
             }
         }
+
+		
         var devicePlatform;
         function clear_Storage() {
             localStorage.clear();
         }
-
 
         function getRealContentHeight() {
             var viewport_height = $(window).height();
