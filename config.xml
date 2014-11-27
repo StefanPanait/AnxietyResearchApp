@@ -19,9 +19,10 @@
     </author>
 
     <icon src="icon.png" />
-
-    <gap:plugin name="de.appplant.cordova.plugin.local-notification" version="0.7.5" />
+    
     <gap:plugin name="org.apache.cordova.device" version="0.2.8" />
+    <gap:plugin name="de.appplant.cordova.plugin.local-notification" version="0.7.5" /> <!-- notification plugin-->
+    <gap:plugin name="de.appplant.cordova.plugin.hidden-statusbar-overlay" version="1.2.0" /> <!--hide status bar for ios-->
 
 <!--
     <gap:config-file platform="android" parent="/manifest/application">

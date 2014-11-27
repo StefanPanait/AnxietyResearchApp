@@ -528,6 +528,7 @@ exercise_7 += "                    <\/tr>";
 exercise_7 += "                <\/table>";
 exercise_7 += "            <\/form>";
 exercise_7 += "            <a href=\"#\" id='2' onclick='exercise_7_add_row();' data-role=\"button\" >Add Entry<\/a>";
+
 exercise_7 += "            <div id=\"definition_naming_the_mind\" data-role=\"popup\" data-theme=\"e\" data-overlay-theme=\"a\" class=\"ui-content\">";
 exercise_7 += "                <a href=\"#\" data-rel=\"back\" data-role=\"button\" data-theme=\"a\" data-icon=\"delete\" data-iconpos=\"notext\" class=\"ui-btn-right\">Close<\/a>";
 exercise_7 += "                <h3> Naming What the Mind Is Doing: <\/h3>";
@@ -542,6 +543,7 @@ exercise_7 += "                <p><\/ul>";
 exercise_7 += "                    Some people find that this enables them to get out of their mind and refocus on their task, whatever that may be (doing a presentation, interacting at a party or making small talk, for example). ";
 exercise_7 += "                <\/p>";
 exercise_7 += "            <\/div>";
+
 exercise_7 += "            <div id=\"definition_thanking_the_mind\" data-role=\"popup\" data-theme=\"e\" data-overlay-theme=\"a\" class=\"ui-content\">";
 exercise_7 += "                <a href=\"#\" data-rel=\"back\" data-role=\"button\" data-theme=\"a\" data-icon=\"delete\" data-iconpos=\"notext\" class=\"ui-btn-right\">Close<\/a>";
 exercise_7 += "                <h3> Thanking the Mind: <\/h3>";
@@ -549,6 +551,7 @@ exercise_7 += "                <p>";
 exercise_7 += "                    When your mind thinks about the dangers that await you in social situations, it is just doing its job, and it deserves some credit for that (even if it ultimately is not helpful). Hence, a popular defusion strategy is to thank the mind for thoughts. ";
 exercise_7 += "                <\/p>";
 exercise_7 += "            <\/div>";
+
 exercise_7 += "            <div id=\"definition_ditching_the_meaning\" data-role=\"popup\" data-theme=\"e\" data-overlay-theme=\"a\" class=\"ui-content\">";
 exercise_7 += "                <a href=\"#\" data-rel=\"back\" data-role=\"button\" data-theme=\"a\" data-icon=\"delete\" data-iconpos=\"notext\" class=\"ui-btn-right\">Close<\/a>";
 exercise_7 += "            <h3> Ditching the Meaning of Your Thoughts: <\/h3>";
@@ -582,7 +585,8 @@ exercise_7 += "                    Notice how your thoughts look by printing, wr
 exercise_7 += "                <\/p>";
 exercise_7 += "            <\/li><\/ul>";
 exercise_7 += "            <\/div>";
-exercise_7 += "            <div id=\"definition_awareness_of_thinking\" data-role=\"popup\" data-theme=\"e\" data-overlay-theme=\"a\" class=\"ui-content\">";
+
+exercise_7 += "            <div id=\"definition_awareness_of_thinking\" data-role=\"popup\" data-theme=\"e\"  data-overlay-theme=\"a\" class=\"ui-content\">";
 exercise_7 += "                <a href=\"#\" data-rel=\"back\" data-role=\"button\" data-theme=\"a\" data-icon=\"delete\" data-iconpos=\"notext\" class=\"ui-btn-right\">Close<\/a>";
 exercise_7 += "            <h3> \"I Am Having the Thought That...\":  <\/h3>";
 exercise_7 += "            <p>";
@@ -612,8 +616,8 @@ function loadExercise_7() {
                 var notices = document.getElementsByClassName('exercise_7_notice');
 
 
-            thoughts[i-1].value = exercise_7['exercise_7_thought_'+i];
-            notices[i-1].value = exercise_7['exercise_7_notice_'+i];
+                thoughts[i-1].value = exercise_7['exercise_7_thought_'+i];
+                notices[i-1].value = exercise_7['exercise_7_notice_'+i];
                 if ((exercise_7['exercise_7_thought_'+i].length > 0) && (exercise_7['exercise_7_notice_'+i].length > 0) && (exercise_7['exercise_7_strategy_'+i] != 'none')) {
                     $('#e7_'+i+'_check').css('visibility','visible');
                 }
@@ -687,7 +691,7 @@ function exercise_7_add_row(thought, notice, pageload) {
     cell1.innerHTML="<textarea type='text' class='exercise_7_thought' onchange='submitExcerise_7();' id='exercise_7_thought_"+row_number+"' value='"+thought+"'/></textarea>";
 
 
-    cell2.innerHTML="<div data-role='fieldcontain'><select class='exercise_7_strategy' onchange='submitExcerise_7();' data-mini='true' id='exercise_7_strategy_"+row_number+"'  data-native-menu='false'><option value='none'></option><option value='Fortune-Telling'>Fortune-Telling</option><option value='Mind Reading'>Mind Reading</option><option value='Shoulding'>'Shoulding'</option><option value='Postmortem'>Postmortem</option><option value='The Spotlight Effect'>The Spotlight Effect</option><option value='Generating Stories'>Generating Stories</option></select></div>";
+    cell2.innerHTML="<div data-role='fieldcontain'><select class='exercise_7_strategy' onchange='submitExcerise_7();' data-mini='true' id='exercise_7_strategy_"+row_number+"'  data-native-menu='false' css='width:150px ! important ;'><option value='none'></option><option value='Fortune-Telling'>Fortune-Telling</option><option value='Mind Reading'>Mind Reading</option><option value='Shoulding'>'Shoulding'</option><option value='Postmortem'>Postmortem</option><option value='The Spotlight Effect'>The Spotlight Effect</option><option value='Generating Stories'>Generating Stories</option></select></div>";
 
     cell3.innerHTML = "<textarea type='text' class='exercise_7_notice' onchange='submitExcerise_7();' name='exercise_7_notice_1' value='"+notice+"' /></textarea>";
     cell4.innerHTML = "<a href='#' id='exercise_7_remove_"+row_number+"' onclick='exercise_7_remove_row("+row_number+");' data-role='button' data-icon='delete' data-iconpos='notext' data-mini='true' data-inline='true'>Delete</a>";
