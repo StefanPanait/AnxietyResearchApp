@@ -601,53 +601,44 @@ exercise_7 += "            <\/div>";
 function loadExercise_7() {
     if (localStorage['exercise_7']) {
         var exercise_7 = JSON.parse(localStorage['exercise_7']);
-        for (var i = 1; i<=exercise_7['rows']; i++){
-            if (i===1) {
+
+        for (var i = 0; i<exercise_7['rows']; i++){
+            if (i===0) {
                 var thoughts = document.getElementsByClassName('exercise_7_thought');
                 var notices = document.getElementsByClassName('exercise_7_notice');
 
 
                 thoughts[0].value = exercise_7['exercise_7_thought_1'];
                 notices[0].value = exercise_7['exercise_7_notice_1'];
-                if ((exercise_7['exercise_7_thought_1'].length > 0) && (exercise_7['exercise_7_notice_'+i].length > 0) && (exercise_7['exercise_7_strategy_'+i] != 'none')) {
-                    $('#e7_'+i+'_check').css('visibility','visible');
-                }
             } else {
-                exercise_7_add_row(exercise_7['exercise_7_thought_'+i],exercise_7['exercise_7_notice_'+i],true);
+                exercise_7_add_row(exercise_7['exercise_7_thought_'+(i+1)],exercise_7['exercise_7_notice_'+(i+1)],true);
             }
 
-            thoughts[i-1].value = exercise_7['exercise_7_thought_'+i];
-            notices[i-1].value = exercise_7['exercise_7_notice_'+i];
-            $("#exercise_7_strategy_"+i).val(exercise_7['exercise_7_strategy_'+i]).attr('selected', true)
+            thoughts[i].value = exercise_7['exercise_7_thought_'+(i+1)];
+            notices[i].value = exercise_7['exercise_7_notice_'+(i+1)];
+            $("#exercise_7_strategy_"+(i+1)).val(exercise_7['exercise_7_strategy_'+(i+1)]).attr('selected', true);
         }
     }
 }
 function submitExcerise_7() {
     var exercise_7 = {};
     var table=document.getElementById("table_exercise_7");
-
-    exercise_7['rows'] = table.rows.length-1; //exclude header
+    exercise_7['rows'] = table.rows.length; 
 
     var strategies = document.getElementsByClassName('exercise_7_strategy');
     var thoughts = document.getElementsByClassName('exercise_7_thought');
     var notices = document.getElementsByClassName('exercise_7_notice');
-    for (var i = 1; i<table.rows.length;i++){
-        var id = strategies[i+i-1].id; //i'm not proud of myself
 
-        if (i===1) {
-            if ((thoughts[i-1].value.length > 0) && (notices[i-1].value.length > 0) && ($("#"+id).val() != 'none')) {
-                $('#e7_'+i+'_check').css('visibility','visible');
-            } else {
-                $('#e7_'+i+'_check').css('visibility','hidden');
-            }
-        }
-        exercise_7['exercise_7_thought_'+i] = thoughts[i-1].value
+    for (var i = 0; i<table.rows.length;i++){
+        exercise_7['exercise_7_thought_'+(i+1)] = thoughts[i].value
+        //exercise_7['exercise_7_strategy_'+(i+1)] = strategies[i+i+1].value;
+        exercise_7['exercise_7_strategy_'+(i+1)] = $("#exercise_7_strategy_"+(i+1)).val();
+        exercise_7['exercise_7_notice_'+(i+1)] =  notices[i].value
 
-        exercise_7['exercise_7_strategy_'+i] = $("#"+id).val();
-        exercise_7['exercise_7_notice_'+i] =  notices[i-1].value
-
+        
     }
-    localStorage.setItem('exercise_7', JSON.stringify(exercise_7));             
+    localStorage.setItem('exercise_7', JSON.stringify(exercise_7)); 
+
 }
 
 function exercise_7_remove_row(id) {
@@ -699,19 +690,15 @@ function exercise_7_add_row(thought, notice, pageload) {
     entry += "                              <label>What did you Notice?<\/label>";
     entry += "                              <textarea type=\"text\" class=\"exercise_7_notice\" onchange=\"submitExcerise_7()\"><\/textarea>";
     entry += "                          <\/td>";
-    entry += "                      <\/tr>";
-    entry += "                          <td>";
-    entry += "                              <a href='#' id='exercise_7_remove_"+(row_number+1)+"' onclick='exercise_7_remove_row("+(row_number+1)+");' data-role='button' data-icon='delete' data-mini='true' data-inline='true'>Delete</a>";                      
-    entry += "                          <\/td>";
-    entry += "                      <\/tr>";   
+    //entry += "                      <\/tr>";
+    //entry += "                          <td>";
+   // entry += "                              <a href='#' id='exercise_7_remove_"+(row_number+1)+"' onclick='exercise_7_remove_row("+(row_number+1)+");' data-role='button' data-icon='delete' data-mini='true' data-inline='true'>Delete</a>";                      
+    //entry += "                          <\/td>";
+    //entry += "                      <\/tr>";   
     entry += "                  <\/table>";
     entry += "                  <\/td>";
 
     row.innerHTML=entry;
-
-
-
-
 
 
 
